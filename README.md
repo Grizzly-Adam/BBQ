@@ -1,5 +1,8 @@
 BBQ v1.0 by Grizzly Adam
 
+https://forum.minetest.net/viewtopic.php?f=9&t=19324
+https://github.com/Grizzly-Adam/BBQ-MINETEST-
+
 Goals
 -----
 -Expanding the cooking & food options in Minetest
