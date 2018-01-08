@@ -27,3 +27,5 @@ Exceptions:
 * Other meats, hotdog, sugar and Beef Map images were found through internet searches and modified, some more severely than others.
 
 Have I missed out credit? Please tell me.
+
+
