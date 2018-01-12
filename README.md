@@ -1,8 +1,33 @@
-BBQ v1.0 by Grizzly Adam
+BBQ v1.01 by Grizzly Adam
 
 https://forum.minetest.net/viewtopic.php?f=9&t=19324
 
-https://github.com/Grizzly-Adam/BBQ-MINETEST-
+https://github.com/Grizzly-Adam/BBQ
+
+New In This Version
+-------------------
+Bug Fix: All Colours of Sheep Now Drop Mutton
+
+Added support for Farming Redo
+
+New Items:
+	Wood Pile (can store trees, wood slabs, and sticks)
+	Smoker Blue Print (wall hanging)
+	Yeast (Can be found when harvesting grass and jungle grass)
+	Bacon Cheeseburger
+	
+
+Updated Textures:
+	Raw Mutton
+	Cooked Mutton
+	Raw Leg of Lamb
+	Cooked Leg of Lamb
+	Sugar
+	Brine
+	Hotdog
+	Hamburger
+
+	
 
 Goals
 -----
@@ -28,7 +53,7 @@ Exceptions:
 
 * Tomato image taken from Rubenwardy's Food Mod
 * Beef designs taken from Daniel_Smith, some were further modified
-* Other meats, hotdog, sugar and Beef Map images were found through internet searches and modified, some more severely than others.
+* All other textures created by Grizzly Adam
 
 Have I missed out credit? Please tell me.
 

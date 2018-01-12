@@ -21,6 +21,16 @@ minetest.register_craft( {
 	}
 })
 
+--Smoker Blueprint Recipe
+minetest.register_craft( {
+	output = "bbq:smoker_blueprint",
+	recipe = {
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "dye:blue", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+	}
+})
+
 --Leg of Lamb Craft Recipe
 minetest.register_craft( {
 	output = "bbq:rack_lamb_raw",
@@ -67,7 +77,7 @@ minetest.register_craft( {
 	recipe = {
 		{"", "", ""},
 		{"", "", ""},
-		{"bbq:bbq_sauce", "bbq:beef_raw", "bbq:pepper_ground"}
+		{"bbq:bbq_sauce", "bbq:beef_raw", "group:pepper_ground"}
 	}
 })
 
@@ -77,7 +87,17 @@ minetest.register_craft( {
 	recipe = {
 		{"", "", ""},
 		{"", "", ""},
-		{"bbq:hot_sauce", "mobs:chicken_raw", "bbq:pepper_ground"}
+		{"bbq:hot_sauce", "mobs:chicken_raw", "group:pepper_ground"}
+	}
+})
+
+--Bacon Cheeseburger Craft Recipe
+minetest.register_craft( {
+	output = "bbq:bacon_cheeseburger",
+	recipe = {
+		{"", "farming:bread", ""},
+		{"bbq:bacon", "bbq:beef", "group:cheese"},
+		{"", "farming:bread", ""}
 	}
 })
 

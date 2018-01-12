@@ -82,6 +82,13 @@ minetest.register_craftitem("bbq:hot_wings", {
 	on_use = minetest.item_eat(9),
 })
 
+-- Bacon Cheeseburger
+minetest.register_craftitem("bbq:bacon_cheeseburger", {
+	description = ("Bacon Cheeseburger"),
+	inventory_image = "bbq_bacon_cheeseburger.png",
+	on_use = minetest.item_eat(9),
+})
+
 -- Hamburger
 minetest.register_craftitem("bbq:hamburger", {
 	description = ("Hamburger"),
@@ -279,6 +286,40 @@ minetest.register_node("bbq:beef_map", {
 		},
 	groups = {choppy=3, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("bbq:smoker_blueprint", {
+	description = "Beef Map",
+	inventory_image = "bbq_smoker_blueprint.png",
+	tiles = {
+		"default_pine_wood.png", "default_pine_wood.png",
+		"default_pine_wood.png", "default_pine_wood.png",
+		"default_pine_wood.png", "bbq_smoker_blueprint.png",
+	},
+
+	paramtype2 = "facedir",
+	paramtype = "light",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+				{-0.5, -0.5, 0.4, 0.5, 0.5, 0.5},
+
+			},
+		},
+	groups = {choppy=3, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+-- Yeast
+minetest.register_node("bbq:yeast", {
+	description = ("Yeast"),
+	inventory_image = "bbq_yeast.png",
+	wield_image = "bbq_yeast.png",
+	drawtype = "plantlike",
+	tiles = {"bbq_yeast.png"},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	sounds = default.node_sound_glass_defaults(),
 })
 
 -------------------

@@ -3,9 +3,9 @@ A BBQ add-on for Minetest.
 Depends on (and expands upon) Mobs-Redo and it's animals add-ons.
 Causes cows to drop beef and lambs to drop button.
 
-Play's nice with Crops and Food addons. Can use tomatos, cheese, sugar, and honey from Crops, Food, and Mobs-Redo add-ons. Also compatible with my expansion of the Crops add-on (adds peppers, peppercorns, and ground pepper to the Crops add-on, all are present in this addon but without the actual pepper plant).
+Play's nice with Crops, Food, and Farming Redo addons. Can use tomatos, chili peppers, cheese, sugar, and honey from Crops, Food, Farming Redo, and Mobs-Redo add-ons. Also compatible with my expansion of the Crops add-on (adds peppers, peppercorns, and ground pepper to the Crops add-on, all are present in this addon but without the actual pepper plant).
 
-Upgrades the BTUs of wood and wood planks in a realistic way when used in furnaces (including the smoker).
+Upgrades the BTUs of wood and wood planks in a realistic way when used in furnaces (including the smoker). Allows trees, slabs, and sticks to be stored in woodpile.
 
 All spices and sauces can be placed on the vessels shelf. Also added support for placing the bucket in the vessels shelf.
 
@@ -13,11 +13,14 @@ Adds the following items:
 
 Smoker
 Beef Map (Wall Hanging)
+Smoker Blueprint (Wall Hanging)
+Wood Pile
 
 Peppercorn
 Ground Pepper
 Sea Salt
 Sugar
+Yeast (Can be found when harvesting grass and jungle grass)
 
 Bell Pepper
 Tomato
@@ -36,6 +39,7 @@ BBQ Chicken (Raw & Cooked)
 BBQ Beef Ribs (Raw & Cooked)
 Hot Wings (Raw & Cooked)
 Hamburger
+Bacon Cheeseburger
 Hot Dog
 Beef Jerky (Raw & Cooked)
 Pepper Steak (Raw & Cooked)

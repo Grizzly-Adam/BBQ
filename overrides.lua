@@ -7,13 +7,39 @@ if  minetest.registered_items["food:tomato"] ~= nil then
 minetest.override_item("food:tomato", {
     groups = {tomato=1},
 })
+end
 
+
+if  minetest.registered_items["food:cheese"] ~= nil then
 minetest.override_item("food:cheese", {
     groups = {cheese=1},
 })
+end
 
+if  minetest.registered_items["food:sugar"] ~= nil then
 minetest.override_item("food:sugar", {
     groups = {sugar=1},
+})
+end
+
+---------------------------------------------------------
+
+-----CHECK FOR FARMING REDO ADDON-------------------------------
+if  minetest.registered_items["farming:chili_pepper"] ~= nil then
+minetest.override_item("farming:chili_pepper", {
+    groups = {pepper=1},
+})
+end
+
+if  minetest.registered_items["farming:sugar"] ~= nil then
+minetest.override_item("farming:sugar", {
+    groups = {sugar=1},
+})
+end
+
+if  minetest.registered_items["farming:tomato"] ~= nil then
+minetest.override_item("farming:tomato", {
+    groups = {tomato=1},
 })
 
 end
@@ -27,38 +53,101 @@ minetest.override_item("mobs:cheese", {
     groups = {cheese=1},
 })
 
-
-
----------
---Aliases
----------
-minetest.register_alias("crops:tomato", "bbq:tomato")
-minetest.register_alias("food:tomato", "bbq:tomato")
-
-
-minetest.register_alias("mobs:cheese", "bbq:cheese")
-minetest.register_alias("food:cheese", "bbq:cheese")
-
-minetest.register_alias("crops:pepper", "bbq:pepper")
-
-
-minetest.register_alias("crops:peppercorn", "bbq:peppercorn")
-
-minetest.register_alias("crops:pepper_ground", "bbq:pepper_ground")
-
-minetest.register_alias("crops:pepper", "bbq:pepper")
-
-minetest.register_alias("food:sugar", "bbq:sugar")
-
-
 ---------------------------------
 --UPGRADE MEAT DROPS IN MOBS REDO
 ---------------------------------
+
+local def = minetest.registered_entities["mobs_animal:sheep_black"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_blue"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_brown"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_cyan"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_dark_green"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_dark_grey"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_green"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_grey"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_magenta"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_orange"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_pink"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_red"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+local def = minetest.registered_entities["mobs_animal:sheep_violet"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
 local def = minetest.registered_entities["mobs_animal:sheep_white"]
 assert(def, "mobs:sheep not found")
 def.drops = {
 	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
 }
+
+local def = minetest.registered_entities["mobs_animal:sheep_yellow"]
+assert(def, "mobs:sheep not found")
+def.drops = {
+	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
+}
+
+
 
 local def = minetest.registered_entities["mobs_animal:cow"]
 assert(def, "mobs:cow not found")
@@ -66,6 +155,31 @@ def.drops = {
 		{name = "bbq:beef_raw", chance = 1, min = 1, max = 3},
 		{name = "mobs:leather", chance = 1, min = 1, max = 2},
 }
+
+-------------------------------
+--MAKE YEAST NATURALLY OCCURING
+-------------------------------
+
+for i = 1, 5 do
+	minetest.override_item("default:grass_"..i, {drop = {
+		max_items = 1,
+		items = {
+			{items = {'farming:seed_wheat'},rarity = 5},
+		{items = {'bbq:yeast'},rarity = 8},
+			{items = {'default:grass_1'}},
+		}
+	}})
+end
+
+minetest.override_item("default:junglegrass", {drop = {
+	max_items = 1,
+	items = {
+		{items = {'farming:seed_cotton'},rarity = 8},
+		{items = {'bbq:yeast'},rarity = 8},
+		{items = {'default:junglegrass'}},
+	}
+}})
+
 -----------------------------------------------
 --MAKE VESSEL TYPE ITEMS WORK WITH VESSEL SHELF
 -----------------------------------------------
@@ -146,4 +260,76 @@ minetest.register_craft({
 	type = "fuel",
 	recipe = "stairs:slab_aspen_wood",
 	burntime = 7,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "default:stick",
+	burntime = 2,
+})
+
+--------------------------------------------------
+--ADD WOOD SLABWOOD, TREES AND STICKS TO WOOD PILE
+--------------------------------------------------
+minetest.override_item("default:wood", {
+    groups = {wood_pile=1, wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:aspen_wood", {
+    groups = {wood_pile=1, wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:junglewood", {
+    groups = {wood_pile=1, wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:acacia_wood", {
+    groups = {wood_pile=1, wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:pine_wood", {
+    groups = {wood_pile=1, wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+minetest.override_item("stairs:slab_wood", {
+    groups = {wood_pile=1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_aspen_wood", {
+    groups = {wood_pile=1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_junglewood", {
+    groups = {wood_pile=1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_acacia_wood", {
+    groups = {wood_pile=1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_pine_wood", {
+    groups = {wood_pile=1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:tree", {
+    groups = {wood_pile=1, tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:aspen_tree", {
+    groups = {wood_pile=1, tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:jungletree", {
+    groups = {wood_pile=1, tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:acacia_tree", {
+    groups = {wood_pile=1, tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:pine_tree", {
+    groups = {wood_pile=1, tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("default:stick", {
+    groups = {wood_pile=1, stick = 1, flammable = 2},
 })
