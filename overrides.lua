@@ -1,3 +1,43 @@
+--------------------------
+--COMPATIBILITY WITH CROPS
+--------------------------
+
+if minetest.registered_items["crops:peppercorn"] ~= 1 then
+
+minetest.override_item("bbq:peppercorn", {
+
+		on_place =function(itemstack, placer, pointed_thing)
+		local under = minetest.get_node(pointed_thing.under)
+		if minetest.get_item_group(under.name, "soil") <= 1 then
+			return
+		end
+		crops.plant(pointed_thing.above, {name="crops:pepper_plant_1", param2 = 1})
+		if not minetest.setting_getbool("creative_mode") then
+			itemstack:take_item()
+		end
+		return itemstack
+	end
+})
+end
+
+if  minetest.registered_items["crops:tomato"] ~= nil then
+minetest.override_item("crops:tomato", {
+    groups = {tomato=1},
+})
+end
+
+if  minetest.registered_items["crops:pepper"] ~= nil then
+minetest.override_item("crops:pepper", {
+    groups = {pepper=1},
+})
+end
+
+if  minetest.registered_items["crops:peppercorn"] ~= nil then
+minetest.override_item("crops:peppercorn", {
+    groups = {peppercorn=1},
+})
+end
+
 -------------------------
 --Add food to Like Groups
 -------------------------

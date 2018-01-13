@@ -1,4 +1,4 @@
-BBQ v1.01 by Grizzly Adam
+BBQ v1.02 by Grizzly Adam
 
 https://forum.minetest.net/viewtopic.php?f=9&t=19324
 
@@ -9,6 +9,7 @@ New In This Version
 Bug Fix: All Colours of Sheep Now Drop Mutton
 
 Added support for Farming Redo
+Improved support for Crops
 
 New Items:
 	Wood Pile (can store trees, wood slabs, and sticks)

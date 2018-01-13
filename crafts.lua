@@ -186,8 +186,6 @@ minetest.register_node("bbq:peppercorn", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-
-
 --Ground Pepper
 minetest.register_node("bbq:pepper_ground", {
 	description = ("Ground Pepper"),
