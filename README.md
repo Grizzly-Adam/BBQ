@@ -1,10 +1,45 @@
-BBQ v1.1 by Grizzly Adam
+BBQ v1.11 by Grizzly Adam
 
 https://forum.minetest.net/viewtopic.php?f=9&t=19324
 
 https://github.com/Grizzly-Adam/BBQ
 
+Goals
+-----
+-Expanding the cooking & food options in Minetest
+-Add working smoker and grill to Minetest
+-Utilize under-used items, such as vessels, vessel shelf, and mushrooms
+-Be compatible with and expand on Mobs-Redo and it's Animals pack
+-Be compatible with Food Rubenwardy's Food Mod
+-Be compatible with Auke Kok's Crops Mod
+-Be compatible with Farming-Redo Mod 
+
+Documentation
+-------------
+
+For more information about what is in this pack, check the file: description.txt
+
+Credits
+---------
+
+Created by Grizzly Adam
+
+Feel free to resue parts or all of my work.
+
+Exceptions:
+
+* Potato image, Tomato image and original corn image taken from Auke Kok's Crops Mod
+* Beef designs taken from Daniel_Smith, some were further modified
+* All other textures created by Grizzly Adam
+
+Have I forgotten to credit your work? Please tell me.
+
 New In This Version
+-------------------
+Adjusted Kettle Grill fire animation
+Fixed Kettle Grill crafting recipe.
+
+New In Version 1.1
 -------------------
 New Items:
 	Kettle Gril
@@ -62,35 +97,3 @@ Updated Textures:
 	Brine
 	Hotdog
 	Hamburger
-
-	
-
-Goals
------
--Expanding the cooking & food options in Minetest
--Add working smoker and grill to Minetest
--Utilize under-used items, such as vessels, vessel shelf, and mushrooms
--Be compatible with and expand on Mobs-Redo and it's Animals pack
--Be compatible with Food Rubenwardy's Food Mod
--Be compatible with Auke Kok's Crops Mod
--Be compatible with Farming-Redo Mod 
-
-Documentation
--------------
-
-For more information about what is in this pack, check the description.txt pack
-
-Credits
----------
-
-Created by Grizzly Adam
-
-Feel free to resue parts or all of my work.
-
-Exceptions:
-
-* Potato image, Tomato image and original corn image taken from Auke Kok's Crops Mod
-* Beef designs taken from Daniel_Smith, some were further modified
-* All other textures created by Grizzly Adam
-
-Have I missed out credit? Please tell me.

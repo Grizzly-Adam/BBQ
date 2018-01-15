@@ -400,6 +400,7 @@ minetest.register_node("bbq:kettle_grill_active", {
 		fixed = {
 				{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5}, -- main body
 				{-0.18, -0.3, -0.0, 0.18, .4, 0.0}, -- smoke
+				{-0.0, -0.3, -0.18, 0.0, .4, 0.18}, -- smoke
 			},
 		},
 

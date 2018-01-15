@@ -82,6 +82,17 @@ minetest.register_craft( {
 	replacements = {{"bucket:bucket_water","bucket:bucket_empty"}},
 })
 
+
+--Kettle Grill Craft Recipe
+minetest.register_craft( {
+	output = "bbq:kettle_grill",
+	recipe = {
+		{"default:steel_ingot", "bbq:charcoal_lump", "default:steel_ingot"},
+		{"default:steel_ingot", "bbq:charcoal_lump", "default:steel_ingot"},
+		{"", "default:steel_ingot", ""}
+	}
+})
+
 --Smoker Craft Recipe
 minetest.register_craft( {
 	output = "bbq:smoker",
