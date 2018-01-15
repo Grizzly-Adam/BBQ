@@ -3,32 +3,47 @@ A BBQ add-on for Minetest.
 Depends on (and expands upon) Mobs-Redo and it's animals add-ons.
 Causes cows to drop beef and lambs to drop button.
 
-Play's nice with Crops, Food, and Farming Redo addons. Can use tomatos, chili peppers, cheese, sugar, and honey from Crops, Food, Farming Redo, and Mobs-Redo add-ons. Also compatible with my expansion of the Crops add-on (adds peppers, peppercorns, and ground pepper to the Crops add-on, all are present in this addon but without the actual pepper plant).
+Play's nice with Crops, Food, and Farming Redo addons. Can use potatos, corn, tomatos, chili peppers, cheese, sugar, and honey from Crops, Food, Farming Redo, and Mobs-Redo add-ons. Also compatible with my expansion of the Crops add-on (adds peppers, peppercorns, and ground pepper to the Crops add-on, all are present in this addon but without the actual pepper plant).
 
 Upgrades the BTUs of wood and wood planks in a realistic way when used in furnaces (including the smoker). Allows trees, slabs, and sticks to be stored in woodpile.
+Adds propane and charcoal fuels.
 
 All spices and sauces can be placed on the vessels shelf. Also added support for placing the bucket in the vessels shelf.
 
 Adds the following items:
 
 Smoker
+Kettle Gril
 Beef Map (Wall Hanging)
 Smoker Blueprint (Wall Hanging)
 Wood Pile
+Lump Charcoal (fuel)
+Charcoal Briquettes (fuel)
+Bag O' Charcoal (fuel)
+Propane (fuel)
+Sawdust
+Foil
 
 Peppercorn
 Ground Pepper
+Paprika
 Sea Salt
 Sugar
+Molasses (byproduct of Sugar)
 Yeast (Can be found when harvesting grass and jungle grass)
 
 Bell Pepper
+Tomato
+Potato
 Tomato
 
 Brine
 Liquid Smoke
 Hot suace
 BBQ Sauce
+Steak sauce
+Vinegar
+Vinegar Mother
 
 Mutton (Raw & Cooked)
 Beef (Raw & Cooked)
@@ -44,4 +59,18 @@ Hot Dog
 Beef Jerky (Raw & Cooked)
 Pepper Steak (Raw & Cooked)
 Bacon  (Raw & Cooked)
-Stuffed Pepper  (Raw & Cooked)
+Stuffed Pepper
+Beer
+Cheese Steak  (Raw & Cooked)
+Pizza (Raw & Cooked)
+Grilled Tomato
+Brisket  (Raw & Cooked)
+Corned Beef  (Raw & Cooked)
+Veggie Kebabs  (Raw & Cooked)
+Lamb Kebabs  (Raw & Cooked)
+Smoked Pepper  (Raw & Cooked)
+Grilled Corn  (Raw & Cooked)
+Stuffed Mushroom  (Raw & Cooked)
+Portabella Steaks  (Raw & Cooked)
+Pickled peppers
+Veggie Packets  (Raw & Cooked)

@@ -38,6 +38,18 @@ minetest.override_item("crops:peppercorn", {
 })
 end
 
+if  minetest.registered_items["crops:corn_cob"] ~= nil then
+minetest.override_item("crops:corn_cob", {
+    groups = {corn=1},
+})
+end
+
+if  minetest.registered_items["crops:potato"] ~= nil then
+minetest.override_item("crops:potato", {
+    groups = {potato=1},
+})
+end
+
 -------------------------
 --Add food to Like Groups
 -------------------------
@@ -62,9 +74,16 @@ minetest.override_item("food:sugar", {
 })
 end
 
----------------------------------------------------------
 
------CHECK FOR FARMING REDO ADDON-------------------------------
+if  minetest.registered_items["food:potato"] ~= nil then
+minetest.override_item("food:potato", {
+    groups = {potato=1},
+})
+end
+
+-------------------------------
+---CHECK FOR FARMING REDO ADDON
+-------------------------------
 if  minetest.registered_items["farming:chili_pepper"] ~= nil then
 minetest.override_item("farming:chili_pepper", {
     groups = {pepper=1},
@@ -81,7 +100,20 @@ if  minetest.registered_items["farming:tomato"] ~= nil then
 minetest.override_item("farming:tomato", {
     groups = {tomato=1},
 })
+end
 
+
+if  minetest.registered_items["farming:corn"] ~= nil then
+minetest.override_item("farming:corn", {
+    groups = {corn=1},
+})
+end
+
+
+if  minetest.registered_items["farming:potato"] ~= nil then
+minetest.override_item("farming:potato", {
+    groups = {potato=1},
+})
 end
 ---------------------------------------------------------
 
