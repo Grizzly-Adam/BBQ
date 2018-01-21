@@ -138,7 +138,7 @@ minetest.register_node("bbq:beer", {
 		},
 
 
-	on_use = minetest.item_eat(2),
+	on_use = minetest.item_eat(6),
 })
 
 -- Vinegar
@@ -152,7 +152,7 @@ minetest.register_node("bbq:vinegar", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
--- Vinegar
+-- Vinegar Mother
 minetest.register_node("bbq:vinegar_mother", {
 	description = ("Vinegar Mother"),
 	inventory_image = "bbq_vinegar_mother.png",
@@ -181,7 +181,7 @@ minetest.register_craftitem("bbq:veggie_kebab_raw", {
 minetest.register_craftitem("bbq:veggie_packet", {
 	description = ("Veggie Packet"),
 	inventory_image = "bbq_veggie_packet.png",
-	on_use = minetest.item_eat(8),
+	on_use = minetest.item_eat(5),
 })
 
 -- Veggie Packet Raw
@@ -195,56 +195,56 @@ minetest.register_craftitem("bbq:veggie_packet_raw", {
 minetest.register_craftitem("bbq:stuffed_mushroom", {
 	description = ("Stuffed Mushroom"),
 	inventory_image = "bbq_stuffed_mushroom.png",
-	on_use = minetest.item_eat(5),
+	on_use = minetest.item_eat(9),
 })
 
 -- Stuffed Mushroom Raw
 minetest.register_craftitem("bbq:stuffed_mushroom_raw", {
 	description = ("Stuffed Mushroom Raw"),
 	inventory_image = "bbq_stuffed_mushroom_raw.png",
-	on_use = minetest.item_eat(3),
+	on_use = minetest.item_eat(5),
 })
 
 -- Portebello Steak_Raw
 minetest.register_craftitem("bbq:portebello_steak_raw", {
 	description = ("Portebello Steak Raw"),
 	inventory_image = "bbq_portebello_steak_raw.png",
-	on_use = minetest.item_eat(3),
+	on_use = minetest.item_eat(5),
 })
 
 -- Portebello Steak
 minetest.register_craftitem("bbq:portebello_steak", {
 	description = ("Portebello Steak"),
 	inventory_image = "bbq_portebello_steak.png",
-	on_use = minetest.item_eat(5),
+	on_use = minetest.item_eat(9),
 })
 
 -- Lamb Kebab
 minetest.register_craftitem("bbq:lamb_kebab", {
 	description = ("Lamb Kebab"),
 	inventory_image = "bbq_lamb_kebab.png",
-	on_use = minetest.item_eat(9),
+	on_use = minetest.item_eat(4),
 })
 
 -- Lamb Kebab Raw
 minetest.register_craftitem("bbq:lamb_kebab_raw", {
 	description = ("Lamb Kebab Raw"),
 	inventory_image = "bbq_lamb_kebab_raw.png",
-	on_use = minetest.item_eat(9),
+	on_use = minetest.item_eat(2),
 })
 
 -- Rack of Lamb
 minetest.register_craftitem("bbq:rack_lamb", {
 	description = ("Rack of Lamb"),
 	inventory_image = "bbq_rack_lamb.png",
-	on_use = minetest.item_eat(9),
+	on_use = minetest.item_eat(10),
 })
 
 -- Rack of Lamb Raw
 minetest.register_craftitem("bbq:rack_lamb_raw", {
 	description = ("Rack of Lamb Raw"),
 	inventory_image = "bbq_rack_lamb_raw.png",
-	on_use = minetest.item_eat(4),
+	on_use = minetest.item_eat(5),
 })
 
 -- Leg of Lamb
@@ -272,14 +272,14 @@ minetest.register_craftitem("bbq:ham", {
 minetest.register_craftitem("bbq:ham_raw", {
 	description = ("Ham Raw"),
 	inventory_image = "bbq_ham_raw.png",
-	on_use = minetest.item_eat(3),
+	on_use = minetest.item_eat(4),
 })
 
 -- BBQ Chicken
 minetest.register_craftitem("bbq:bbq_chicken", {
 	description = ("BBQ Chicken"),
 	inventory_image = "bbq_bbq_chicken.png",
-	on_use = minetest.item_eat(10),
+	on_use = minetest.item_eat(8),
 })
 
 -- BBQ Chicken Raw
@@ -293,21 +293,21 @@ minetest.register_craftitem("bbq:bbq_chicken_raw", {
 minetest.register_craftitem("bbq:corned_beef_raw", {
 	description = ("Corned Beef Raw"),
 	inventory_image = "bbq_corned_beef_raw.png",
-	on_use = minetest.item_eat(4),
+	on_use = minetest.item_eat(5),
 })
 
 -- Corned Beef
 minetest.register_craftitem("bbq:corned_beef", {
 	description = ("Corned Beef"),
 	inventory_image = "bbq_corned_beef.png",
-	on_use = minetest.item_eat(9),
+	on_use = minetest.item_eat(10),
 })
 
 -- BBQ Brisket
 minetest.register_craftitem("bbq:brisket", {
 	description = ("BBQ Brisket"),
 	inventory_image = "bbq_brisket.png",
-	on_use = minetest.item_eat(10),
+	on_use = minetest.item_eat(9),
 })
 
 -- BBQ Brisket Raw
@@ -321,7 +321,7 @@ minetest.register_craftitem("bbq:brisket_raw", {
 minetest.register_craftitem("bbq:bbq_beef_ribs", {
 	description = ("BBQ Ribs"),
 	inventory_image = "bbq_beef_ribs.png",
-	on_use = minetest.item_eat(10),
+	on_use = minetest.item_eat(9),
 })
 
 -- BBQ Beef Ribs Raw
@@ -342,7 +342,7 @@ minetest.register_craftitem("bbq:hot_wings_raw", {
 minetest.register_craftitem("bbq:hot_wings", {
 	description = ("Hot Wings"),
 	inventory_image = "bbq_hot_wings.png",
-	on_use = minetest.item_eat(9),
+	on_use = minetest.item_eat(8),
 })
 
 -- Bacon Cheeseburger
@@ -356,7 +356,7 @@ minetest.register_craftitem("bbq:bacon_cheeseburger", {
 minetest.register_craftitem("bbq:cheese_steak", {
 	description = ("Cheese Steak"),
 	inventory_image = "bbq_cheese_steak.png",
-	on_use = minetest.item_eat(9),
+	on_use = minetest.item_eat(8),
 })
 
 -- Hamburger
@@ -377,7 +377,7 @@ minetest.register_craftitem("bbq:hotdog", {
 minetest.register_craftitem("bbq:grilled_pizza_raw", {
 	description = ("Grilled Pizza Raw"),
 	inventory_image = "bbq_grilled_pizza_raw.png",
-	on_use = minetest.item_eat(8),
+	on_use = minetest.item_eat(5),
 })
 
 -- Grilled Pizza
@@ -391,14 +391,14 @@ minetest.register_craftitem("bbq:grilled_pizza", {
 minetest.register_craftitem("bbq:beef_jerky_raw", {
 	description = ("Beef Jerky Raw"),
 	inventory_image = "bbq_beef_jerky_raw.png",
-	on_use = minetest.item_eat(4),
+	on_use = minetest.item_eat(2),
 })
 
 -- Beef Jerky
 minetest.register_craftitem("bbq:beef_jerky", {
 	description = ("Beef Jerky"),
 	inventory_image = "bbq_beef_jerky.png",
-	on_use = minetest.item_eat(12),
+	on_use = minetest.item_eat(5),
 })
 
 -- Raw Pepper Steak
@@ -426,7 +426,7 @@ minetest.register_craftitem("bbq:bacon_raw", {
 minetest.register_craftitem("bbq:bacon", {
 	description = ("Bacon"),
 	inventory_image = "bbq_bacon.png",
-	on_use = minetest.item_eat(9),
+	on_use = minetest.item_eat(7),
 })
 
 -- Stuffed Pepper
@@ -440,14 +440,14 @@ minetest.register_craftitem("bbq:stuffed_pepper", {
 minetest.register_craftitem("bbq:stuffed_pepper_raw", {
 	description = ("Stuffed Pepper Raw"),
 	inventory_image = "bbq_stuffed_pepper_raw.png",
-	on_use = minetest.item_eat(5),
+	on_use = minetest.item_eat(4),
 })
 
 --Bell Pepper
 minetest.register_craftitem("bbq:pepper", {
 	description = ("Pepper"),
 	inventory_image = "bbq_pepper.png",
-	on_use = minetest.item_eat(1),
+	on_use = minetest.item_eat(7),
 	groups = {pepper=1},
 })
 
@@ -455,14 +455,14 @@ minetest.register_craftitem("bbq:pepper", {
 minetest.register_craftitem("bbq:smoked_pepper", {
 	description = ("Smoked Pepper"),
 	inventory_image = "bbq_smoked_pepper.png",
-	on_use = minetest.item_eat(3),
+	on_use = minetest.item_eat(5),
 })
 
 --Tomato
 minetest.register_craftitem("bbq:tomato", {
 	description = ("Tomato"),
 	inventory_image = "bbq_tomato.png",
-	on_use = minetest.item_eat(1),
+	on_use = minetest.item_eat(3),
 	groups = {tomato=1},
 })
 
@@ -493,14 +493,14 @@ minetest.register_craftitem("bbq:grilled_tomato", {
 minetest.register_craftitem("bbq:grilled_corn", {
 	description = ("Grilled Corn"),
 	inventory_image = "bbq_grilled_corn.png",
-	on_use = minetest.item_eat(5),
+	on_use = minetest.item_eat(8),
 })
 
 --Grilled Corn Raw
 minetest.register_craftitem("bbq:grilled_corn_raw", {
 	description = ("Grilled Corn Raw"),
 	inventory_image = "bbq_grilled_corn_raw.png",
-	on_use = minetest.item_eat(3),
+	on_use = minetest.item_eat(5),
 })
 
 --Peppercorn
@@ -601,6 +601,7 @@ minetest.register_node("bbq:sugar", {
 	tiles = {"bbq_sugar.png"},
 	groups = {vessel = 1, sugar=1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
+	on_use = minetest.item_eat(2),
 })
 
 -- Molasses

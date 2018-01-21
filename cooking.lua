@@ -125,7 +125,7 @@ minetest.register_craft( {
 
 --Lamb Kebab Craft Recipe
 minetest.register_craft( {
-	output = "bbq:lamb_kebab_raw",
+	output = "bbq:lamb_kebab_raw 3",
 	recipe = {
 		{"", "group:pepper", ""},
 		{"", "bbq:mutton_raw", ""},
@@ -133,9 +133,9 @@ minetest.register_craft( {
 	}
 })
 
---Leg of Lamb Craft Recipe
+--Rack of Lamb Craft Recipe
 minetest.register_craft( {
-	output = "bbq:rack_lamb_raw",
+	output = "bbq:rack_lamb_raw 2",
 	recipe = {
 		{"", "bbq:bbq_sauce", ""},
 		{"", "bbq:mutton_raw", ""},
@@ -145,7 +145,7 @@ minetest.register_craft( {
 
 --Leg of Lamb Craft Recipe
 minetest.register_craft( {
-	output = "bbq:leg_lamb_raw",
+	output = "bbq:leg_lamb_raw 2",
 	recipe = {
 		{"", "", ""},
 		{"", "", ""},
@@ -155,7 +155,7 @@ minetest.register_craft( {
 
 --Ham Craft Recipe
 minetest.register_craft( {
-	output = "bbq:ham_raw",
+	output = "bbq:ham_raw 2",
 	recipe = {
 		{"", "", ""},
 		{"", "", ""},
@@ -175,7 +175,7 @@ minetest.register_craft( {
 
 --BBQ Chicken Craft Recipe
 minetest.register_craft( {
-	output = "bbq:bbq_chicken_raw",
+	output = "bbq:bbq_chicken_raw 3",
 	recipe = {
 		{"", "", ""},
 		{"", "", ""},
@@ -185,7 +185,7 @@ minetest.register_craft( {
 
 --BBQ Beef Ribs Craft Recipe
 minetest.register_craft( {
-	output = "bbq:bbq_beef_ribs_raw",
+	output = "bbq:bbq_beef_ribs_raw 2",
 	recipe = {
 		{"", "", ""},
 		{"", "", ""},
@@ -205,7 +205,7 @@ minetest.register_craft( {
 
 --BBQ Brisket Craft Recipe
 minetest.register_craft( {
-	output = "bbq:brisket_raw",
+	output = "bbq:brisket_raw 2",
 	recipe = {
 		{"", "", ""},
 		{"", "bbq:bbq_sauce", ""},
@@ -215,7 +215,7 @@ minetest.register_craft( {
 
 --Hot Wings Craft Recipe
 minetest.register_craft( {
-	output = "bbq:hot_wings_raw",
+	output = "bbq:hot_wings_raw 3",
 	recipe = {
 		{"", "", ""},
 		{"", "", ""},
@@ -225,7 +225,7 @@ minetest.register_craft( {
 
 --Bacon Cheeseburger Craft Recipe
 minetest.register_craft( {
-	output = "bbq:bacon_cheeseburger",
+	output = "bbq:bacon_cheeseburger 3",
 	recipe = {
 		{"", "farming:bread", ""},
 		{"bbq:bacon", "bbq:beef", "group:cheese"},
@@ -235,7 +235,7 @@ minetest.register_craft( {
 
 --Cheese Steak Craft Recipe
 minetest.register_craft( {
-	output = "bbq:cheese_steak",
+	output = "bbq:cheese_steak 3",
 	recipe = {
 		{"", "farming:bread", ""},
 		{"group:pepper", "bbq:beef", "group:cheese"},
@@ -245,7 +245,7 @@ minetest.register_craft( {
 
 --Hamburger Craft Recipe
 minetest.register_craft( {
-	output = "bbq:hamburger",
+	output = "bbq:hamburger 2",
 	recipe = {
 		{"", "farming:bread", ""},
 		{"", "bbq:beef", ""},
@@ -255,7 +255,7 @@ minetest.register_craft( {
 
 --Hotdog Craft Recipe
 minetest.register_craft( {
-	output = "bbq:hotdog",
+	output = "bbq:hotdog 2",
 	recipe = {
 		{"", "", ""},
 		{"", "", ""},
@@ -265,7 +265,7 @@ minetest.register_craft( {
 
 --Grilled Pizza Craft Recipe
 minetest.register_craft( {
-	output = "bbq:grilled_pizza_raw",
+	output = "bbq:grilled_pizza_raw 3",
 	recipe = {
 		{"", "group:cheese", ""},
 		{"group:pepper", "bbq:grilled_tomato", "flowers:mushroom_brown"},
@@ -275,7 +275,7 @@ minetest.register_craft( {
 
 --Bacon Craft Recipe
 minetest.register_craft( {
-	output = "bbq:bacon_raw",
+	output = "bbq:bacon_raw 2",
 	recipe = {
 		{"", "", ""},
 		{"bbq:liquid_smoke", "bbq:brine", "mobs:pork_raw"},
@@ -285,7 +285,7 @@ minetest.register_craft( {
 
 --Beef Jerky Craft Recipe
 minetest.register_craft( {
-	output = "bbq:beef_jerky_raw",
+	output = "bbq:beef_jerky_raw 3",
 	recipe = {
 		{"", "", ""},
 		{"bbq:liquid_smoke", "bbq:brine", "bbq:beef_raw"},
@@ -305,7 +305,7 @@ minetest.register_craft( {
 
 --Stuffed Mushroom Craft Recipe
 minetest.register_craft( {
-	output = "bbq:stuffed_mushroom_raw",
+	output = "bbq:stuffed_mushroom_raw 2",
 	recipe = {
 		{"", "group:tomato", ""},
 		{"", "farming:bread", ""},
@@ -315,7 +315,7 @@ minetest.register_craft( {
 
 --Veggie Kebab Craft Recipe
 minetest.register_craft( {
-	output = "bbq:veggie_kebab_raw",
+	output = "bbq:veggie_kebab_raw 2",
 	recipe = {
 		{"", "group:pepper", ""},
 		{"group:potato", "group:tomato", "flowers:mushroom_brown"},
@@ -325,7 +325,7 @@ minetest.register_craft( {
 
 --Veggie Packet Craft Recipe
 minetest.register_craft( {
-	output = "bbq:veggie_packet_raw",
+	output = "bbq:veggie_packet_raw 2",
 	recipe = {
 		{"", "bbq:pepper_ground", ""},
 		{"group:tomato", "group:potato", "group:corn"},
@@ -345,7 +345,7 @@ minetest.register_craft( {
 
 --Stuffed Pepper Craft Recipe
 minetest.register_craft( {
-	output = "bbq:stuffed_pepper_raw",
+	output = "bbq:stuffed_pepper_raw 3",
 	recipe = {
 		{"", "group:cheese", ""},
 		{"", "farming:bread", ""},
@@ -355,7 +355,7 @@ minetest.register_craft( {
 
 --Grilled Corn Craft Recipe
 minetest.register_craft( {
-	output = "bbq:grilled_corn_raw",
+	output = "bbq:grilled_corn_raw 2",
 	recipe = {
 		{"", "group:cheese", ""},
 		{"", "bbq:paprika", ""},
