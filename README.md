@@ -1,4 +1,4 @@
-BBQ v1.11 by Grizzly Adam
+BBQ v1.12 by Grizzly Adam
 
 https://forum.minetest.net/viewtopic.php?f=9&t=19324
 
@@ -19,22 +19,14 @@ Documentation
 
 For more information about what is in this pack, check the file: description.txt
 
-Credits
----------
-
-Created by Grizzly Adam
-
-Feel free to resue parts or all of my work.
-
-Exceptions:
-
-* Potato image, Tomato image and original corn image taken from Auke Kok's Crops Mod
-* Beef designs taken from Daniel_Smith, some were further modified
-* All other textures created by Grizzly Adam
-
-Have I forgotten to credit your work? Please tell me.
-
 New In This Version
+-------------------
+Adjusted food items to make output of recipes equivalent to the foods used.
+Replaced beef textures.
+Updated license.
+
+
+New In Version 1.11
 -------------------
 Adjusted Kettle Grill fire animation
 Fixed Kettle Grill crafting recipe.
