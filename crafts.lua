@@ -1,11 +1,11 @@
 -- Kettle Grill
 minetest.register_node("bbq:kettle_grill", {
-	description = ("Propane"),
+	description = ("Kettle Grill"),
 	inventory_image = "bbq_kettle_grill.png",
 	wield_image = "bbq_kettle_grill.png",
 	drawtype = "plantlike",
 	tiles = {"bbq_kettle_grill.png"},
-	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {grill=1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_metal_defaults(),
 })
 
@@ -29,6 +29,30 @@ minetest.register_node("bbq:sawdust", {
 				{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
 			},
 		},
+})
+
+-- Chimeny Smoke
+minetest.register_node("bbq:chimney_smoke", {
+	description = ("Chimney Smoke"),
+	inventory_image = "bbq_chimney_smoke.png",
+	wield_image = "bbq_chimney_smoke.png",
+	drawtype = "plantlike",
+	tiles = {
+		{
+			image = "bbq_chimney_smoke_animation.png",
+			backface_culling = false,
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 1.5
+			},
+		},
+
+	},
+
+
+	groups = {dig_immediate = 3, attached_node = 1},
 })
 
 -- Foil
@@ -102,7 +126,7 @@ minetest.register_node("bbq:propane", {
 	wield_image = "bbq_propane.png",
 	drawtype = "plantlike",
 	tiles = {"bbq_propane.png"},
-	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {explody = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_metal_defaults(),
 })
 
@@ -366,10 +390,45 @@ minetest.register_craftitem("bbq:hamburger", {
 	on_use = minetest.item_eat(9),
 })
 
+-- Hamburger Patty
+minetest.register_craftitem("bbq:hamburger_patty", {
+	description = ("Hamburger Patty"),
+	inventory_image = "bbq_hamburger_patty.png",
+	on_use = minetest.item_eat(8),
+})
+
+-- Hamburger Patty Raw
+minetest.register_craftitem("bbq:hamburger_patty_raw", {
+	description = ("Hamburger Patty Raw"),
+	inventory_image = "bbq_hamburger_patty_raw.png",
+	on_use = minetest.item_eat(3),
+})
+
 -- Hot Dog
 minetest.register_craftitem("bbq:hotdog", {
 	description = ("Hot Dog"),
 	inventory_image = "bbq_hotdog.png",
+	on_use = minetest.item_eat(8),
+})
+
+-- Hotdog Raw
+minetest.register_craftitem("bbq:hotdog_cooked", {
+	description = ("Hotdog Cooked"),
+	inventory_image = "bbq_hotdog_cooked.png",
+	on_use = minetest.item_eat(7),
+})
+
+-- Hotdog Raw
+minetest.register_craftitem("bbq:hotdog_raw", {
+	description = ("Hotdog Raw"),
+	inventory_image = "bbq_hotdog_raw.png",
+	on_use = minetest.item_eat(3),
+})
+
+-- Pulled Pork
+minetest.register_craftitem("bbq:pulled_pork", {
+	description = ("Pulled Pork"),
+	inventory_image = "bbq_pulled_pork.png",
 	on_use = minetest.item_eat(8),
 })
 
@@ -429,6 +488,34 @@ minetest.register_craftitem("bbq:bacon", {
 	on_use = minetest.item_eat(7),
 })
 
+-- London Broil Raw
+minetest.register_craftitem("bbq:london_broil_raw", {
+	description = ("London Broil Raw"),
+	inventory_image = "bbq_london_broil_raw.png",
+	on_use = minetest.item_eat(3),
+})
+
+-- London Broil
+minetest.register_craftitem("bbq:london_broil", {
+	description = ("London Broil"),
+	inventory_image = "bbq_london_broil.png",
+	on_use = minetest.item_eat(7),
+})
+
+-- Stuffed Chop Raw
+minetest.register_craftitem("bbq:stuffed_chop_raw", {
+	description = ("Stuffed Chop Raw"),
+	inventory_image = "bbq_stuffed_chop_raw.png",
+	on_use = minetest.item_eat(3),
+})
+
+-- Stuffed Chop
+minetest.register_craftitem("bbq:stuffed_chop", {
+	description = ("Stuffed Chop"),
+	inventory_image = "bbq_stuffed_chop.png",
+	on_use = minetest.item_eat(8),
+})
+
 -- Stuffed Pepper
 minetest.register_craftitem("bbq:stuffed_pepper", {
 	description = ("Stuffed Pepper"),
@@ -464,6 +551,63 @@ minetest.register_craftitem("bbq:tomato", {
 	inventory_image = "bbq_tomato.png",
 	on_use = minetest.item_eat(3),
 	groups = {tomato=1},
+})
+
+minetest.register_craftitem("bbq:tomato_sauce", {
+	description = ("Tomato Sauce"),
+	inventory_image = "bbq_tomato_sauce.png",
+	groups = { tomato_sauce=1, vessel=1 },
+	on_use = minetest.item_eat(2)
+})
+
+minetest.register_craftitem("bbq:onion", {
+	description = ("Onion"),
+	groups= {onion=1},
+	inventory_image = "bbq_onion.png",
+	on_use = minetest.item_eat(1)
+})
+
+--Garlic
+minetest.register_craftitem("bbq:garlic", {
+	description = ("Garlic"),
+	inventory_image = "bbq_garlic.png",
+	on_use = minetest.item_eat(1),
+	groups = {garlic = 1},
+})
+
+--Garlic Braid
+minetest.register_node("bbq:garlic_braid", {
+	description = ("Garlic Braid"),
+	inventory_image = "bbq_garlic_braid.png",
+	wield_image = "bbq_garlic_braid.png",
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	tiles = {
+		"bbq_garlic_braid_side.png","bbq_garlic_braid.png",
+		"bbq_garlic_braid_side.png^[transformFx","bbq_garlic_braid_side.png",
+		"bbq_garlic_braid.png","bbq_garlic_braid.png"
+	},
+	groups = {garlic_braid=1, vessel = 1, dig_immediate = 3},
+	sounds = default.node_sound_leaves_defaults(),
+	node_box = {
+		type = "fixed",
+		fixed = {
+				{-0.13, -0.45, 0.5, 0.13, 0.45, 0.24,
+
+			},
+		},
+	}
+})
+
+--Garlic Clove
+minetest.register_node("bbq:garlic_clove", {
+	description = ("Garlic Clove"),
+	inventory_image = "bbq_garlic_clove.png",
+	wield_image = "bbq_garlic_clove.png",
+	tiles = { "bbq_garlic_clove.png" },
+	groups = { garlic_clove=1, snappy=3,flammable=3,flora=1,attached_node=1 },
+
 })
 
 --Potato
@@ -698,20 +842,6 @@ minetest.register_node("bbq:yeast", {
 --Animal Drop Meats
 -------------------
 
--- Raw Mutton
-minetest.register_craftitem("bbq:mutton_raw", {
-	description = ("Raw Mutton"),
-	inventory_image = "bbq_mutton_raw.png",
-	on_use = minetest.item_eat(3),
-})
-
--- Cooked Mutton
-minetest.register_craftitem("bbq:mutton", {
-	description = ("Mutton"),
-	inventory_image = "bbq_mutton_cooked.png",
-	on_use = minetest.item_eat(8),
-})
-
 -- Raw Beef
 minetest.register_craftitem("bbq:beef_raw", {
 	description = ("Raw Beef"),
@@ -724,4 +854,169 @@ minetest.register_craftitem("bbq:beef", {
 	description = ("Beef"),
 	inventory_image = "bbq_beef_cooked.png",
 	on_use = minetest.item_eat(8),
+})
+
+--Spatula
+minetest.register_node("bbq:spatula", {
+	description = ("Spatula"),
+	inventory_image = "bbq_spatula.png",
+	wield_image = "bbq_spatula.png",
+	groups = {dig_immediate = 3, cracky=1, oddly_breakable_by_hand=1},
+	sounds = default.node_sound_metal_defaults(),
+
+
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	tiles = {
+		"bbq_spatula_tile.png", "bbq_spatula_tile.png",
+		"bbq_spatula_tile.png", "bbq_spatula_tile.png",
+		"bbq_spatula_tile.png", "bbq_spatula_tile.png",
+	},
+	groups = {vessel = 1, dig_immediate = 3},
+	sounds = default.node_sound_leaves_defaults(),
+	node_box = {
+		type = "fixed",
+		fixed = {
+				{-0.15, -0.45, 0.5, 0.125, -.218, 0.45,},
+				{-0.105, -0.218, 0.5, 0.085, -0.19, 0.45,},
+				{-0.0625, -0.19, 0.5, 0.03125, .5, 0.45,},
+--				{-0.15, -0.45, 0.5, 0.125, -.1, 0.45,},
+		},
+	},
+
+on_use = function(itemstack, placer, pointed_thing)
+
+	-- check if a grill
+	if minetest.get_node(pointed_thing.under).name == "bbq:kettle_grill_active" then
+		     minetest.sound_play("bbq_sizzle",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+
+	else
+
+	if minetest.get_node(pointed_thing.under).name == "bbq:propane_grill_active" then
+		     minetest.sound_play("bbq_sizzle",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+
+	else
+
+	if minetest.get_node(pointed_thing.under).name == "bbq:smoker_active" then
+		     minetest.sound_play("bbq_sizzle",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+			end
+		end
+	end
+end
+
+})
+
+--Basting Brush
+minetest.register_node("bbq:basting_brush", {
+	description = ("Basting Brush"),
+	inventory_image = "bbq_basting_brush.png",
+	wield_image = "bbq_basting_brush.png",
+	groups = {dig_immediate = 3, cracky=1, oddly_breakable_by_hand=1},
+	sounds = default.node_sound_metal_defaults(),
+
+
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	tiles = {
+		"bbq_basting_brush_hang.png", "bbq_basting_brush_hang.png",
+		"bbq_basting_brush_hang.png", "bbq_basting_brush_hang.png",
+		"bbq_basting_brush_hang.png", "bbq_basting_brush_hang.png",
+	},
+	groups = {vessel = 1, dig_immediate = 3},
+	sounds = default.node_sound_leaves_defaults(),
+	node_box = {
+		type = "fixed",
+		fixed = {
+				{-0.085, -0.45, 0.5, 0.085, -.2525, 0.45,},
+				{-0.0625, -0.2525, 0.5, 0.0625, -.218, 0.45,},
+				{-0.03, -0.218, 0.5, 0.03, 0.0	, 0.45,},
+				{-0.0625, 0.0, 0.5, 0.0625, 0.465, 0.45,},
+				{-0.03, .465, 0.5, 0.03, .5, 0.45,},
+		},
+	},
+
+on_use = function(itemstack, placer, pointed_thing)
+
+	-- check if a grill
+	if minetest.get_node(pointed_thing.under).name == "bbq:kettle_grill_active" then
+		     minetest.sound_play("bbq_basting",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+
+	else
+
+	if minetest.get_node(pointed_thing.under).name == "bbq:propane_grill_active" then
+		     minetest.sound_play("bbq_basting",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+
+	else
+
+	if minetest.get_node(pointed_thing.under).name == "bbq:smoker_active" then
+		     minetest.sound_play("bbq_basting",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+			end
+		end
+	end
+end
+
+})
+
+--Grill Brush
+minetest.register_node("bbq:grill_brush", {
+	description = ("Grill Brush"),
+	inventory_image = "bbq_grill_brush.png",
+	wield_image = "bbq_grill_brush.png",
+	groups = {dig_immediate = 3, cracky=1, oddly_breakable_by_hand=1},
+	sounds = default.node_sound_metal_defaults(),
+
+
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	tiles = {
+		"bbq_grill_brush_hang_top.png", "bbq_grill_brush_hang.png",
+		"bbq_grill_brush_hang.png", "bbq_grill_brush_hang.png",
+		"bbq_grill_brush_hang.png", "bbq_grill_brush_hang.png",
+	},
+	groups = {vessel = 1, dig_immediate = 3},
+	sounds = default.node_sound_leaves_defaults(),
+	node_box = {
+		type = "fixed",
+		fixed = {
+				{-0.12, -0.5, 0.49, 0.12, -.467, 0.48,},
+				{-0.15, -0.467, 0.5, 0.15, -.2225, 0.45,},
+				{-0.125, -0.44, 0.5, 0.125, -.25, 0.35,},
+				{-0.03, -0.2225, 0.5, 0.03, 0.13, 0.45,},
+				{-0.0625, 0.13	, 0.5, 0.0625, 0.485, 0.45,},
+				{-0.03, .485, 0.5, 0.03, .5, 0.45,},
+		},
+	},
+
+on_use = function(itemstack, placer, pointed_thing)
+
+	-- check if a grill
+	if minetest.get_node(pointed_thing.under).name == "bbq:kettle_grill_active" then
+		     minetest.sound_play("bbq_grill_brush",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+
+	else
+
+	if minetest.get_node(pointed_thing.under).name == "bbq:propane_grill_active" then
+		     minetest.sound_play("bbq_grill_brush",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+
+	else
+
+	if minetest.get_node(pointed_thing.under).name == "bbq:smoker_active" then
+		     minetest.sound_play("bbq_grill_brush",
+				{pos=pointed_thing.under, max_hear_distance = 10,})
+			end
+		end
+	end
+end
+
 })

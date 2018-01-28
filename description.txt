@@ -1,9 +1,10 @@
-A BBQ add-on for Minetest.
+Your Dad's BBQ Mod
+---For Minetest---
 
 Depends on (and expands upon) Mobs-Redo and it's animals add-ons.
 Causes cows to drop beef and sheep to drop mutton.
 
-Play's nice with Crops, Food, and Farming Redo addons. Can use potatos, corn, tomatos, chili peppers, cheese, sugar, and honey from Crops, Food, Farming Redo, and Mobs-Redo add-ons. Also compatible with Crops Plus, my expansion of the Crops add-on (adds peppers, peppercorns, and ground pepper to the Crops add-on, all are present in this addon but without the actual pepper plant).
+Play's nice with Crops, Food, and Farming Redo addons. Can use potatos, corn, tomatos, chili peppers, cheese, sugar, and honey from Crops, Food, Farming Redo, Mobs-Redo and xDecor add-ons. Also compatible with Crops Plus, my expansion of the Crops add-on (adds peppers, peppercorns, and ground pepper to the Crops add-on, all are present in this addon but without the actual pepper plant).
 
 Upgrades the BTUs of wood and wood planks in a realistic way when used in furnaces (including the smoker). Allows trees, slabs, and sticks to be stored in woodpile.
 Adds propane and charcoal fuels.
@@ -13,16 +14,27 @@ All spices and sauces can be placed on the vessels shelf. Also added support for
 Adds the following items:
 
 Smoker
-Kettle Gril
+Kettle Grill
+Propane Grill
 Beef Map (Wall Hanging)
 Smoker Blueprint (Wall Hanging)
-Wood Pile
 Lump Charcoal (fuel)
 Charcoal Briquettes (fuel)
 Bag O' Charcoal (fuel)
 Propane (fuel)
 Sawdust
 Foil
+Chimney Smoke (Place on top of a chimney)
+
+Wood Pile
+Acaica Wood Pile
+Aspen Wood Pile
+Junglewood Wood Pile
+Pine Wood Pile
+
+Spatula
+Basting Brush
+Grill Brush
 
 Peppercorn
 Ground Pepper
@@ -35,7 +47,11 @@ Yeast (Can be found when harvesting grass and jungle grass)
 Bell Pepper
 Tomato
 Potato
-Tomato
+Corn
+Garlic
+Garlic Clove
+Garlic Braid
+Onion
 
 Brine
 Liquid Smoke
@@ -45,7 +61,6 @@ Steak sauce
 Vinegar
 Vinegar Mother
 
-Mutton (Raw & Cooked)
 Beef (Raw & Cooked)
 Rack of Lamb (Raw & Cooked)
 Leg of Lamb (Raw & Cooked)
@@ -54,15 +69,20 @@ BBQ Chicken (Raw & Cooked)
 BBQ Beef Ribs (Raw & Cooked)
 Hot Wings (Raw & Cooked)
 Hamburger
+Hamburger Patty (Raw and Cooked)
 Bacon Cheeseburger
 Hot Dog
+Hotdog (Raw and Cooked)
+Pulled Pork Sandwich
+London Broil (Raw and Cooked)
+Stuffed Porkchop (Raw and Cooked)
 Beef Jerky (Raw & Cooked)
 Pepper Steak (Raw & Cooked)
 Bacon  (Raw & Cooked)
 Stuffed Pepper
 Beer
 Cheese Steak  (Raw & Cooked)
-Pizza (Raw & Cooked)
+Grilled Pizza (Raw & Cooked)
 Grilled Tomato
 Brisket  (Raw & Cooked)
 Corned Beef  (Raw & Cooked)
@@ -71,6 +91,6 @@ Lamb Kebabs  (Raw & Cooked)
 Smoked Pepper  (Raw & Cooked)
 Grilled Corn  (Raw & Cooked)
 Stuffed Mushroom  (Raw & Cooked)
-Portabella Steaks  (Raw & Cooked)
+Portebello Steaks  (Raw & Cooked)
 Pickled peppers
 Veggie Packets  (Raw & Cooked)

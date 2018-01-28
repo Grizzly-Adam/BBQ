@@ -434,9 +434,9 @@ minetest.register_node("bbq:kettle_grill_base", {
 	description = "Kettle Grill Base",
 
 	tiles = {
-		"bbq_chrome_top.png", "bbq_chrome_bottom.png^[transformFY",
-		"bbq_chrome.png^[transformFX", "bbq_chrome.png",
-		"bbq_chrome_side.png", "bbq_chrome_side.png",
+		"bbq_kettle_top.png", "bbq_kettle_bottom.png^[transformFY",
+		"bbq_kettle.png^[transformFX", "bbq_kettle.png",
+		"bbq_kettle_side.png", "bbq_kettle_side.png",
 	},
 
 	paramtype2 = "facedir",

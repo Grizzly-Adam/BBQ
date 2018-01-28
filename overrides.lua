@@ -1,9 +1,46 @@
+---------
+--ALIASES
+---------
+minetest.register_alias("bbq:mutton_raw", "mobs:mutton_raw")
+minetest.register_alias("bbq:mutton", "mobs:mutton_cooked")
+minetest.register_alias("bbq:wood_pile", "bbq:woodpile_aspen")
+
 --------------------------
 --COMPATIBILITY WITH CROPS
 --------------------------
 
-if minetest.registered_items["crops:peppercorn"] ~= 1 then
+if minetest.registered_items["crops:garlic_clove"] ~= 1 then
+minetest.override_item("bbq:garlic_clove", {
 
+	tiles = { "crops_garlic_plant_1.png" },
+	drawtype = "plantlike",
+	paramtype2 = "meshoptions",
+	waving = 1,
+	sunlight_propagates = false,
+	use_texture_alpha = true,
+	walkable = false,
+	paramtype = "light",
+	node_placement_prediction = "crops:garlic_plant_1",
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.45, -0.5, -0.45,  0.45, -0.4, 0.45}
+	},
+
+	on_place = function(itemstack, placer, pointed_thing)
+		local under = minetest.get_node(pointed_thing.under)
+		if minetest.get_item_group(under.name, "soil") <= 1 then
+			return
+		end
+		crops.plant(pointed_thing.above, {name="crops:garlic_plant_1", param2 = 3})
+		if not minetest.setting_getbool("creative_mode") then
+			itemstack:take_item()
+		end
+		return itemstack
+	end
+})
+end
+
+if minetest.registered_items["crops:peppercorn"] ~= 1 then
 minetest.override_item("bbq:peppercorn", {
 
 		on_place =function(itemstack, placer, pointed_thing)
@@ -115,118 +152,40 @@ minetest.override_item("farming:potato", {
     groups = {potato=1},
 })
 end
+
 ---------------------------------------------------------
 
+if  minetest.registered_items["mobs:honey"] ~= nil then
 minetest.override_item("mobs:honey", {
-    groups = {sugar=1},
+    groups = {sugar=1, honey=1},
 })
+end
 
+if  minetest.registered_items["mobs:cheese"] ~= nil then
 minetest.override_item("mobs:cheese", {
     groups = {cheese=1},
 })
+end
+
+--------------------xdecor-----------------------------
+
+if  minetest.registered_items["xdecor:honey"] ~= nil then
+minetest.override_item("xdecor:honey", {
+    groups = {sugar=1, honey=1},
+})
+end
 
 ---------------------------------
 --UPGRADE MEAT DROPS IN MOBS REDO
 ---------------------------------
-
-local def = minetest.registered_entities["mobs_animal:sheep_black"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_blue"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_brown"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_cyan"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_dark_green"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_dark_grey"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_green"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_grey"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_magenta"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_orange"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_pink"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_red"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_violet"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_white"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-local def = minetest.registered_entities["mobs_animal:sheep_yellow"]
-assert(def, "mobs:sheep not found")
-def.drops = {
-	{name = "bbq:mutton_raw", chance = 1, min = 1, max = 2 },
-}
-
-
-
+if  minetest.registered_items["mobs_animal:cow"] ~= nil then
 local def = minetest.registered_entities["mobs_animal:cow"]
 assert(def, "mobs:cow not found")
 def.drops = {
 		{name = "bbq:beef_raw", chance = 1, min = 1, max = 3},
 		{name = "mobs:leather", chance = 1, min = 1, max = 2},
 }
+end
 
 -------------------------------
 --MAKE YEAST NATURALLY OCCURING
@@ -255,6 +214,7 @@ minetest.override_item("default:junglegrass", {drop = {
 -----------------------------------------------
 --MAKE VESSEL TYPE ITEMS WORK WITH VESSEL SHELF
 -----------------------------------------------
+if  minetest.registered_items["bucket:bucket_empty"] ~= nil then
 minetest.override_item("bucket:bucket_empty", {
     groups = {vessel=1},
 })
@@ -270,6 +230,13 @@ minetest.override_item("bucket:bucket_river_water", {
 minetest.override_item("bucket:bucket_lava", {
     groups = {vessel=1},
 })
+end
+
+if  minetest.registered_items["mobs:bucket_milk"] ~= nil then
+minetest.override_item("mobs:bucket_milk", {
+    groups = {vessel=1},
+})
+end
 
 ----------------------
 --UPGRADING WOOD FUELS

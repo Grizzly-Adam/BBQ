@@ -3,7 +3,7 @@
 -- Formspecs
 --
 
-function default.get_smoker_active_formspec(fuel_percent, item_percent)
+function default.get_propane_grill_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
 		default.gui_bg..
 		default.gui_bg_img..
@@ -26,7 +26,7 @@ function default.get_smoker_active_formspec(fuel_percent, item_percent)
 		default.get_hotbar_bg(0, 4.25)
 end
 
-function default.get_smoker_inactive_formspec()
+function default.get_propane_grill_inactive_formspec()
 	return "size[8,8.5]"..
 		default.gui_bg..
 		default.gui_bg_img..
@@ -48,7 +48,7 @@ function default.get_smoker_inactive_formspec()
 end
 
 --
--- Node callback functions that are the same for active and inactive smoker
+-- Node callback functions that are the same for active and inactive propane_grill
 --
 
 local function can_dig(pos, player)
@@ -66,7 +66,7 @@ local function allow_metadata_inventory_put(pos, listname, index, stack, player)
 	if listname == "fuel" then
 		if minetest.get_craft_result({method="fuel", width=1, items={stack}}).time ~= 0 then
 			if inv:is_empty("src") then
-				meta:set_string("infotext", "smoker is empty")
+				meta:set_string("infotext", "propane_grill is empty")
 			end
 			return stack:get_count()
 		else
@@ -102,7 +102,7 @@ local function swap_node(pos, name)
 	minetest.swap_node(pos, node)
 end
 
-local function smoker_node_timer(pos, elapsed)
+local function propane_grill_node_timer(pos, elapsed)
 	--
 	-- Inizialize metadata
 	--
@@ -142,7 +142,7 @@ local function smoker_node_timer(pos, elapsed)
 
 		-- Check if we have enough fuel to burn
 		if fuel_time < fuel_totaltime then
-			-- The smoker is currently active and has enough fuel
+			-- The propane_grill is currently active and has enough fuel
 			fuel_time = fuel_time + el
 			-- If there is a cookable item then check if it is ready yet
 			if cookable then
@@ -161,7 +161,7 @@ local function smoker_node_timer(pos, elapsed)
 				end
 			end
 		else
-			-- smoker ran out of fuel
+			-- propane_grill ran out of fuel
 			if cookable then
 				-- We need to get new fuel
 				local afterfuel
@@ -224,21 +224,21 @@ local function smoker_node_timer(pos, elapsed)
 		active = "active"
 		local fuel_percent = math.floor(fuel_time / fuel_totaltime * 100)
 		fuel_state = fuel_percent .. "%"
-		formspec = default.get_smoker_active_formspec(fuel_percent, item_percent)
-		swap_node(pos, "bbq:smoker_active")
+		formspec = default.get_propane_grill_active_formspec(fuel_percent, item_percent)
+		swap_node(pos, "bbq:propane_grill_active")
 		-- make sure timer restarts automatically
 		result = true
 	else
 		if not fuellist[1]:is_empty() then
 			fuel_state = "0%"
 		end
-		formspec = default.get_smoker_inactive_formspec()
-		swap_node(pos, "bbq:smoker")
-		-- stop timer on the inactive smoker
+		formspec = default.get_propane_grill_inactive_formspec()
+		swap_node(pos, "bbq:propane_grill")
+		-- stop timer on the inactive propane_grill
 		minetest.get_node_timer(pos):stop()
 	end
 
-	local infotext = "smoker " .. active .. "\n(Item: " .. item_state ..
+	local infotext = "propane_grill " .. active .. "\n(Item: " .. item_state ..
 		"; Fuel: " .. fuel_state .. ")"
 
 	--
@@ -257,15 +257,12 @@ end
 -- Node definitions
 -------------------
 
-minetest.register_node("bbq:smoker", {
-	description = "Smoker",
+minetest.register_node("bbq:propane_grill", {
+	description = "propane_grill",
 	tiles = {
-		"bbq_smoker_texture_bottom.png", --top	
-		"bbq_smoker_texture_bottom.png^[transformFY", --bottom	
-		"bbq_smoker_texture_side.png", --right side	
-		"bbq_smoker_texture_side.png^[transformFX", --left side	
-		"bbq_smoker_texture_back.png", --back
-		"bbq_smoker_texture.png", --front
+		"bbq_propane_grill_top.png", "bbq_propane_grill_bottom.png",
+		"bbq_propane_grill_side.png", "bbq_propane_grill_side.png",
+		"bbq_propane_grill_back.png", "bbq_propane_grill_front.png",
 	},
 
 	paramtype2 = "facedir",
@@ -273,22 +270,9 @@ minetest.register_node("bbq:smoker", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-				{-1, -0.03, -0.3, -0.5, 0.35, 0.093},-- smokebox
-				{-0.5, -0.08, -0.5, 1.0, 0.6, 0.435	}, -- main body
-				{.125, 0.095, -.52, .34, 0.155, -0.54}, -- main handle
-				{-.87, 0.095, -.32, -.66, 0.155, -0.34}, -- smokebox handle
-				{.155, 0.115, -.5, .175, 0.135, -0.55}, -- left handle bolt
-				{.29, 0.115, -.5, .31, 0.135, -0.55}, -- right handle bolt
-				{-.82, 0.115, -.35, -.84, 0.135, -0.3}, -- left smokebox handle bolt
-				{-.69, 0.115, -.35, -.71, 0.135, -0.3}, -- right smokebox handle bolt
-				{1.0, 0.18, .10, 1.49, 0.30, 0.22}, -- chimney x
-				{1.37, 0.18, .10, 1.49, .62, 0.22}, -- chimney y
---				{1.26, 0.62, .1, 1.5, .9, 0.34}, -- chimney smoke
-				{-0.3, -0.5, -0.3, -.4, -0.08, -0.4}, -- front leftleg
-				{0.8, -0.5, -0.3, 0.9, -0.08, -0.4}, -- front right leg
-				{-0.3, -0.5, 0.3, -.4, -0.08, 0.4}, -- front leftleg
-				{0.8, -0.5, 0.3, 0.9, -0.08, 0.4}, -- front right leg
-
+				{-1, 0.2, -0.5, 1, 0.25, 0.5},-- wings
+				{-0.5, -0.5, -0.5, 0.5, 0.25, 0.5}, -- main body
+				{-0.5, 0.25, -0.5, 0.5, 0.68, 0.5}, -- top
 			},
 		},
 
@@ -299,11 +283,11 @@ minetest.register_node("bbq:smoker", {
 
 	can_dig = can_dig,
 
-	on_timer = smoker_node_timer,
+	on_timer = propane_grill_node_timer,
 
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
-		meta:set_string("formspec", default.get_smoker_inactive_formspec())
+		meta:set_string("formspec", default.get_propane_grill_inactive_formspec())
 		local inv = meta:get_inventory()
 		inv:set_size('src', 1)
 		inv:set_size('fuel', 1	)
@@ -314,7 +298,7 @@ minetest.register_node("bbq:smoker", {
 		minetest.get_node_timer(pos):start(1.0)
 	end,
 	on_metadata_inventory_put = function(pos)
-		-- start timer function, it will sort out whether smoker can burn or not.
+		-- start timer function, it will sort out whether propane_grill can burn or not.
 		minetest.get_node_timer(pos):start(1.0)
 	end,
 	on_blast = function(pos)
@@ -322,7 +306,7 @@ minetest.register_node("bbq:smoker", {
 		default.get_inventory_drops(pos, "src", drops)
 		default.get_inventory_drops(pos, "fuel", drops)
 		default.get_inventory_drops(pos, "dst", drops)
-		drops[#drops+1] = "bbq:smoker"
+		drops[#drops+1] = "bbq:propane_grill"
 		minetest.remove_node(pos)
 		return drops
 	end,
@@ -332,35 +316,16 @@ minetest.register_node("bbq:smoker", {
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
 
-minetest.register_node("bbq:smoker_active", {
-	description = "smoker",
+minetest.register_node("bbq:propane_grill_active", {
+	description = "propane_grill",
 
 
 
 	tiles = {
+		"bbq_propane_grill_top.png", "bbq_propane_grill_bottom.png",
+
 		{
-			image = "bbq_smoker_texture_bottom_animated.png", --top	
-			backface_culling = false,
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 1.5
-			},
-		},
-		"bbq_smoker_texture_bottom.png^[transformFY", --bottom	
-		{
-			image = "bbq_smoker_texture_side_animated.png", --right side	
-			backface_culling = false,
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 1.5
-			},
-		},
-		{
-			image = "bbq_smoker_texture_side_animated.png^[transformFX", --left side	
+			image = "bbq_propane_grill_side_active.png",
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",
@@ -371,7 +336,7 @@ minetest.register_node("bbq:smoker_active", {
 		},
 
 		{
-			image = "bbq_smoker_texture_back_animated.png", --back	
+			image = "bbq_propane_grill_side_active.png",
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",
@@ -380,8 +345,10 @@ minetest.register_node("bbq:smoker_active", {
 				length = 1.5
 			},
 		},
-{
-			image = "bbq_smoker_texture_animated.png", --front	
+
+		"bbq_propane_grill_back.png",
+		{
+			image = "bbq_propane_grill_front_active.png",
 			backface_culling = false,
 			animation = {
 				type = "vertical_frames",
@@ -398,21 +365,9 @@ minetest.register_node("bbq:smoker_active", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-				{-1, -0.03, -0.3, -0.5, 0.35, 0.093},-- smokebox
-				{-0.5, -0.08, -0.5, 1.0, 0.6, 0.435	}, -- main body
-				{.125, 0.095, -.52, .34, 0.155, -0.54}, -- main handle
-				{-.87, 0.095, -.32, -.66, 0.155, -0.34}, -- smokebox handle
-				{.155, 0.115, -.5, .175, 0.135, -0.55}, -- left handle bolt
-				{.29, 0.115, -.5, .31, 0.135, -0.55}, -- right handle bolt
-				{-.82, 0.115, -.35, -.84, 0.135, -0.3}, -- left smokebox handle bolt
-				{-.69, 0.115, -.35, -.71, 0.135, -0.3}, -- right smokebox handle bolt
-				{1.0, 0.18, .10, 1.49, 0.30, 0.22}, -- chimney x
-				{1.37, 0.18, .10, 1.49, .62, 0.22}, -- chimney y
-				{1.37, 0.62, .10, 1.49, .9, 0.22}, -- chimney smoke
-				{-0.3, -0.5, -0.3, -.4, -0.08, -0.4}, -- front leftleg
-				{0.8, -0.5, -0.3, 0.9, -0.08, -0.4}, -- front right leg
-				{-0.3, -0.5, 0.3, -.4, -0.08, 0.4}, -- front leftleg
-				{0.8, -0.5, 0.3, 0.9, -0.08, 0.4}, -- front right leg
+				{-1, 0.2, -0.5, 1, 0.25, 0.5},-- wings
+				{-0.5, -0.5, -0.5, 0.5, 0.25, 0.5}, -- main body
+				{-0.5, 0.25, -0.5, 0.5, 0.68, 0.5}, -- top
 			},
 		},
 
@@ -425,12 +380,12 @@ minetest.register_node("bbq:smoker_active", {
 
 
 
-	drop = "bbq:smoker",
+	drop = "bbq:propane_grill",
 	groups = {cracky=2, not_in_creative_inventory=1},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
 	sounds = default.node_sound_stone_defaults(),
-	on_timer = smoker_node_timer,
+	on_timer = propane_grill_node_timer,
 
 	can_dig = can_dig,
 

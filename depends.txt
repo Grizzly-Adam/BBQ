@@ -1,9 +1,10 @@
 default
-vessels
-bucket
-farming
-mobs
-mobs_animal
+bucket?
+mobs?
+mobs_animal?
 craft_guide?
 food?
 crops?
+vessels?
+farming?
+xdecor?

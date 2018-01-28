@@ -1,4 +1,6 @@
-BBQ v1.12 by Grizzly Adam
+Your Dad's BBQ Mod
+---For Minetest---
+v1.20 by Grizzly Adam
 
 https://forum.minetest.net/viewtopic.php?f=9&t=19324
 
@@ -10,7 +12,7 @@ Goals
 -Add working smoker and grill to Minetest
 -Utilize under-used items, such as vessels, vessel shelf, and mushrooms
 -Be compatible with and expand on Mobs-Redo and it's Animals pack
--Be compatible with Food Rubenwardy's Food Mod
+-Be compatible with Rubenwardy's Food Mod
 -Be compatible with Auke Kok's Crops Mod
 -Be compatible with Farming-Redo Mod 
 
@@ -20,6 +22,43 @@ Documentation
 For more information about what is in this pack, check the file: description.txt
 
 New In This Version
+-------------------
+Name changed to Your Dad's BBQ Mod.
+Added a new smoker, renamed old smoker "Propane Grill."
+Added spatula, basting brush, and grill brush. All three play sounds when used with any of the grills while they are active.
+Removed mutton (Mobs-Redo has offically added mutton).
+Hotdog and hamburger meats must now be crafted, cooked, and combined with bread to make finished product.
+bucket:bucket_milk can now be placed in the vessel shelf.
+Added support for xdecor:honey.
+Removed all dependences except default.
+Revamped some older recipes to include tomato sauce, garlic clove, and onion.
+Added a wood pile for each type of wood in the default game.
+Converted all food recipes to shapeless.
+
+
+New Items:
+	Smoker
+	Chimney Smoke (Place on top of a chimney)
+	Wood Pile
+	Acacia Wood Pile
+	Aspen Wood Pile
+	Junglewood Wood Pile
+	Pine Wood Pile
+	Spatula
+	Basting Brush
+	Grill Brush
+	Hamburger Patty (Raw and Cooked)
+	Hotdog (Raw and Cooked)
+	Pulled Pork Sandwich
+	London Broil (Raw and Cooked)
+	Stuffed Porkchop (Raw and Cooked)
+	Garlic
+	Garlic Clove
+	Garlic Braid
+	Onion
+
+
+New In Version 1.12
 -------------------
 Adjusted food items to make output of recipes equivalent to the foods used.
 Replaced beef textures.
