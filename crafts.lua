@@ -37,6 +37,7 @@ minetest.register_node("bbq:chimney_smoke", {
 	inventory_image = "bbq_chimney_smoke.png",
 	wield_image = "bbq_chimney_smoke.png",
 	drawtype = "plantlike",
+	sunlight_propagates = true,
 	tiles = {
 		{
 			image = "bbq_chimney_smoke_animation.png",
@@ -94,6 +95,7 @@ minetest.register_node("bbq:charcoal_bag", {
 	inventory_image = "bbq_charcoal_bag.png",
 	wield_image = "bbq_charcoal_bag.png",
 	drawtype = "plantlike",
+	sunlight_propagates = true,
 	tiles = {
 		"bbq_charcoal_bag_top.png", "bbq_charcoal_bag_top.png",
 		"bbq_charcoal_bag_side.png", "bbq_charcoal_bag_side.png",
@@ -125,6 +127,7 @@ minetest.register_node("bbq:propane", {
 	inventory_image = "bbq_propane.png",
 	wield_image = "bbq_propane.png",
 	drawtype = "plantlike",
+	sunlight_propagates = true,
 	tiles = {"bbq_propane.png"},
 	groups = {explody = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_metal_defaults(),
@@ -142,6 +145,7 @@ minetest.register_node("bbq:beer", {
 	inventory_image = "bbq_beer.png",
 	wield_image = "bbq_beer.png",
 	drawtype = "plantlike",
+	sunlight_propagates = true,
 	tiles = {
 		"bbq_beer_top.png", "bbq_beer_top.png^[transformFy",
 		"bbq_beer.png", "bbq_beer.png",

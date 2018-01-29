@@ -438,7 +438,7 @@ minetest.register_node("bbq:kettle_grill_base", {
 		"bbq_kettle.png^[transformFX", "bbq_kettle.png",
 		"bbq_kettle_side.png", "bbq_kettle_side.png",
 	},
-
+	sunlight_propagates = true,
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
 	node_box = {

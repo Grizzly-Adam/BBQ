@@ -291,7 +291,7 @@ minetest.register_node("bbq:smoker", {
 
 			},
 		},
-
+	sunlight_propagates = true,
 	groups = {cracky=2},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
@@ -416,15 +416,7 @@ minetest.register_node("bbq:smoker_active", {
 			},
 		},
 
-
-
-
-
-
-
-
-
-
+	sunlight_propagates = true,
 	drop = "bbq:smoker",
 	groups = {cracky=2, not_in_creative_inventory=1},
 	legacy_facedir_simple = true,

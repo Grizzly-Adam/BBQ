@@ -276,6 +276,7 @@ minetest.register_node("bbq:propane_grill", {
 			},
 		},
 
+	sunlight_propagates = true,
 	groups = {cracky=2},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
@@ -372,14 +373,7 @@ minetest.register_node("bbq:propane_grill_active", {
 		},
 
 
-
-
-
-
-
-
-
-
+	sunlight_propagates = true,
 	drop = "bbq:propane_grill",
 	groups = {cracky=2, not_in_creative_inventory=1},
 	legacy_facedir_simple = true,

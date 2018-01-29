@@ -25,6 +25,7 @@ New In This Version
 -------------------
 Name changed to Your Dad's BBQ Mod.
 Added a new smoker, renamed old smoker "Propane Grill."
+Grills, propane, bags of charcoal, and beer no longer kill grass.
 Added spatula, basting brush, and grill brush. All three play sounds when used with any of the grills while they are active.
 Removed mutton (Mobs-Redo has offically added mutton).
 Hotdog and hamburger meats must now be crafted, cooked, and combined with bread to make finished product.
