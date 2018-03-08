@@ -370,5 +370,45 @@ minetest.override_item("default:pine_tree", {
 })
 
 minetest.override_item("default:stick", {
-    groups = {wood_pile=1, stick = 1, flammable = 2},
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_wood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_aspen_wood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_junglewood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_acacia_wood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:slab_pine_wood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:stair_wood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:stair_aspen_wood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:stair_junglewood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:stair_acacia_wood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+})
+
+minetest.override_item("stairs:stair_pine_wood", {
+    groups = {wood_pile=1, stick = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 })
