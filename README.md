@@ -1,6 +1,6 @@
 Your Dad's BBQ Mod
 ---For Minetest---
-v1.20 by Grizzly Adam
+v1.21 by Grizzly Adam
 
 https://forum.minetest.net/viewtopic.php?f=9&t=19324
 
@@ -22,6 +22,12 @@ Documentation
 For more information about what is in this pack, check the file: description.txt
 
 New In This Version
+-------------------
+Fixed "shadow" texture bug.
+Fixed wood pile bug, where items could not be placed in woodpile.
+Wood Pile can now store trees, wood planks, *wood slabs, *wood stairs, and sticks.
+
+New In Version 1.20
 -------------------
 Name changed to Your Dad's BBQ Mod.
 Added a new smoker, renamed old smoker "Propane Grill."
@@ -114,7 +120,7 @@ Added support for Farming Redo
 Improved support for Crops
 
 New Items:
-	Wood Pile (can store trees, wood slabs, and sticks)
+	Wood Pile (can store trees, wood planks, and sticks)
 	Smoker Blue Print (wall hanging)
 	Yeast (Can be found when harvesting grass and jungle grass)
 	Bacon Cheeseburger
