@@ -53,7 +53,7 @@ minetest.register_node("bbq:woodpile", {
 		return inv:is_empty("bbq")
 	end,
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "woodpile") ~= 0 then
+		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
 			return stack:get_count()
 		end
 		return 0
@@ -106,7 +106,7 @@ minetest.register_node("bbq:woodpile_acacia", {
 		return inv:is_empty("bbq")
 	end,
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "woodpile") ~= 0 then
+		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
 			return stack:get_count()
 		end
 		return 0
@@ -159,7 +159,7 @@ minetest.register_node("bbq:woodpile_pine", {
 		return inv:is_empty("bbq")
 	end,
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "woodpile") ~= 0 then
+		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
 			return stack:get_count()
 		end
 		return 0
@@ -212,7 +212,7 @@ minetest.register_node("bbq:woodpile_junglewood", {
 		return inv:is_empty("bbq")
 	end,
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "woodpile") ~= 0 then
+		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
 			return stack:get_count()
 		end
 		return 0
@@ -265,7 +265,7 @@ minetest.register_node("bbq:woodpile_aspen", {
 		return inv:is_empty("bbq")
 	end,
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "woodpile") ~= 0 then
+		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
 			return stack:get_count()
 		end
 		return 0
