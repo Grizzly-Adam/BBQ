@@ -268,29 +268,31 @@ minetest.register_node("bbq:smoker", {
 		"bbq_smoker_texture.png", --front
 	},
 
+	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
 		fixed = {
-				{-1, -0.03, -0.3, -0.5, 0.35, 0.093},-- smokebox
-				{-0.5, -0.08, -0.5, 1.0, 0.6, 0.435	}, -- main body
-				{.125, 0.095, -.52, .34, 0.155, -0.54}, -- main handle
-				{-.87, 0.095, -.32, -.66, 0.155, -0.34}, -- smokebox handle
-				{.155, 0.115, -.5, .175, 0.135, -0.55}, -- left handle bolt
-				{.29, 0.115, -.5, .31, 0.135, -0.55}, -- right handle bolt
-				{-.82, 0.115, -.35, -.84, 0.135, -0.3}, -- left smokebox handle bolt
-				{-.69, 0.115, -.35, -.71, 0.135, -0.3}, -- right smokebox handle bolt
-				{1.0, 0.18, .10, 1.49, 0.30, 0.22}, -- chimney x
-				{1.37, 0.18, .10, 1.49, .62, 0.22}, -- chimney y
---				{1.26, 0.62, .1, 1.5, .9, 0.34}, -- chimney smoke
-				{-0.3, -0.5, -0.3, -.4, -0.08, -0.4}, -- front leftleg
-				{0.8, -0.5, -0.3, 0.9, -0.08, -0.4}, -- front right leg
-				{-0.3, -0.5, 0.3, -.4, -0.08, 0.4}, -- front leftleg
-				{0.8, -0.5, 0.3, 0.9, -0.08, 0.4}, -- front right leg
-
+				{-1.5, -0.03, -0.3, -1.0, 0.35, 0.093},-- smokebox
+				{-1.0, -0.08, -0.5, 0.5, 0.6, 0.435	}, -- main body
+				{-0.375, 0.095, -.52, -0.16, 0.155, -0.54}, -- main handle
+				{-1.37, 0.095, -.32, -1.16, 0.155, -0.34}, -- smokebox handle
+				{-0.345, 0.115, -.5, -0.325, 0.135, -0.55}, -- left handle bolt
+				{-0.21, 0.115, -.5, -0.19, 0.135, -0.55}, -- right handle bolt
+				{-1.32, 0.115, -.35, -1.34, 0.135, -0.3}, -- left smokebox handle bolt
+				{-1.19, 0.115, -.35, -1.21, 0.135, -0.3}, -- right smokebox handle bolt
+				{0.5, 0.18, .10, 0.99, 0.30, 0.22}, -- chimney x
+				{0.87, 0.18, .10, 0.99, .62, 0.22}, -- chimney y
+--				{0.93, 0.62, .10, 0.93, .9, 0.22}, -- chimney smoke
+--				{0.87, 0.62, .16, 0.99, .9, 0.16}, -- chimney smoke
+				{-0.8, -0.5, -0.3, -0.9, -0.08, -0.4}, -- front leftleg
+				{0.3, -0.5, -0.3, 0.4, -0.08, -0.4}, -- front right leg
+				{-0.8, -0.5, 0.3, -0.9, -0.08, 0.4}, -- front leftleg
+				{0.3, -0.5, 0.3, 0.4, -0.08, 0.4}, -- front right leg
 			},
 		},
+
 	sunlight_propagates = true,
 	groups = {cracky=2},
 	legacy_facedir_simple = true,
@@ -338,16 +340,7 @@ minetest.register_node("bbq:smoker_active", {
 
 
 	tiles = {
-		{
-			image = "bbq_smoker_texture_bottom_animated.png", --top	
-			backface_culling = false,
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 1.5
-			},
-		},
+		"bbq_smoker_texture_bottom.png", --top	
 		"bbq_smoker_texture_bottom.png^[transformFY", --bottom	
 		{
 			image = "bbq_smoker_texture_side_animated.png", --right side	
@@ -393,26 +386,28 @@ minetest.register_node("bbq:smoker_active", {
 	},
 
 
+	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
 		fixed = {
-				{-1, -0.03, -0.3, -0.5, 0.35, 0.093},-- smokebox
-				{-0.5, -0.08, -0.5, 1.0, 0.6, 0.435	}, -- main body
-				{.125, 0.095, -.52, .34, 0.155, -0.54}, -- main handle
-				{-.87, 0.095, -.32, -.66, 0.155, -0.34}, -- smokebox handle
-				{.155, 0.115, -.5, .175, 0.135, -0.55}, -- left handle bolt
-				{.29, 0.115, -.5, .31, 0.135, -0.55}, -- right handle bolt
-				{-.82, 0.115, -.35, -.84, 0.135, -0.3}, -- left smokebox handle bolt
-				{-.69, 0.115, -.35, -.71, 0.135, -0.3}, -- right smokebox handle bolt
-				{1.0, 0.18, .10, 1.49, 0.30, 0.22}, -- chimney x
-				{1.37, 0.18, .10, 1.49, .62, 0.22}, -- chimney y
-				{1.37, 0.62, .10, 1.49, .9, 0.22}, -- chimney smoke
-				{-0.3, -0.5, -0.3, -.4, -0.08, -0.4}, -- front leftleg
-				{0.8, -0.5, -0.3, 0.9, -0.08, -0.4}, -- front right leg
-				{-0.3, -0.5, 0.3, -.4, -0.08, 0.4}, -- front leftleg
-				{0.8, -0.5, 0.3, 0.9, -0.08, 0.4}, -- front right leg
+				{-1.5, -0.03, -0.3, -1.0, 0.35, 0.093},-- smokebox
+				{-1.0, -0.08, -0.5, 0.5, 0.6, 0.435	}, -- main body
+				{-0.375, 0.095, -.52, -0.16, 0.155, -0.54}, -- main handle
+				{-1.37, 0.095, -.32, -1.16, 0.155, -0.34}, -- smokebox handle
+				{-0.345, 0.115, -.5, -0.325, 0.135, -0.55}, -- left handle bolt
+				{-0.21, 0.115, -.5, -0.19, 0.135, -0.55}, -- right handle bolt
+				{-1.32, 0.115, -.35, -1.34, 0.135, -0.3}, -- left smokebox handle bolt
+				{-1.19, 0.115, -.35, -1.21, 0.135, -0.3}, -- right smokebox handle bolt
+				{0.5, 0.18, .10, 0.99, 0.30, 0.22}, -- chimney x
+				{0.87, 0.18, .10, 0.99, .62, 0.22}, -- chimney y
+				{0.93, 0.62, .10, 0.93, .9, 0.22}, -- chimney smoke
+				{0.87, 0.62, .16, 0.99, .9, 0.16}, -- chimney smoke
+				{-0.8, -0.5, -0.3, -0.9, -0.08, -0.4}, -- front leftleg
+				{0.3, -0.5, -0.3, 0.4, -0.08, -0.4}, -- front right leg
+				{-0.8, -0.5, 0.3, -0.9, -0.08, 0.4}, -- front leftleg
+				{0.3, -0.5, 0.3, 0.4, -0.08, 0.4}, -- front right leg
 			},
 		},
 

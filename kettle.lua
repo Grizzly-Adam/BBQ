@@ -268,6 +268,7 @@ minetest.register_node("bbq:kettle_grill", {
 		"bbq_kettle_grill_ext.png", "bbq_kettle_grill_ext.png",
 	},
 
+	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
 	node_box = {
@@ -393,6 +394,7 @@ minetest.register_node("bbq:kettle_grill_active", {
 	},
 
 
+	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
 	node_box = {
@@ -439,6 +441,7 @@ minetest.register_node("bbq:kettle_grill_base", {
 		"bbq_kettle_side.png", "bbq_kettle_side.png",
 	},
 	sunlight_propagates = true,
+	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
 	node_box = {

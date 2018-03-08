@@ -265,6 +265,7 @@ minetest.register_node("bbq:propane_grill", {
 		"bbq_propane_grill_back.png", "bbq_propane_grill_front.png",
 	},
 
+	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
 	node_box = {
@@ -361,6 +362,7 @@ minetest.register_node("bbq:propane_grill_active", {
 	},
 
 
+	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
 	node_box = {
