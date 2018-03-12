@@ -87,91 +87,12 @@ minetest.override_item("crops:potato", {
 })
 end
 
--------------------------
---Add food to Like Groups
--------------------------
-
------CHECK FOR FOODS ADDON-------------------------------
-if  minetest.registered_items["food:tomato"] ~= nil then
-minetest.override_item("food:tomato", {
-    groups = {tomato=1},
-})
-end
-
-
-if  minetest.registered_items["food:cheese"] ~= nil then
-minetest.override_item("food:cheese", {
-    groups = {cheese=1},
-})
-end
-
-if  minetest.registered_items["food:sugar"] ~= nil then
-minetest.override_item("food:sugar", {
-    groups = {sugar=1},
-})
-end
-
-
-if  minetest.registered_items["food:potato"] ~= nil then
-minetest.override_item("food:potato", {
-    groups = {potato=1},
-})
-end
-
--------------------------------
----CHECK FOR FARMING REDO ADDON
--------------------------------
-if  minetest.registered_items["farming:chili_pepper"] ~= nil then
-minetest.override_item("farming:chili_pepper", {
-    groups = {pepper=1},
-})
-end
-
-if  minetest.registered_items["farming:sugar"] ~= nil then
-minetest.override_item("farming:sugar", {
-    groups = {sugar=1},
-})
-end
-
-if  minetest.registered_items["farming:tomato"] ~= nil then
-minetest.override_item("farming:tomato", {
-    groups = {tomato=1},
-})
-end
-
-
-if  minetest.registered_items["farming:corn"] ~= nil then
-minetest.override_item("farming:corn", {
-    groups = {corn=1},
-})
-end
-
-
-if  minetest.registered_items["farming:potato"] ~= nil then
-minetest.override_item("farming:potato", {
-    groups = {potato=1},
-})
-end
-
----------------------------------------------------------
-
-if  minetest.registered_items["mobs:honey"] ~= nil then
-minetest.override_item("mobs:honey", {
-    groups = {sugar=1, honey=1},
-})
-end
-
-if  minetest.registered_items["mobs:cheese"] ~= nil then
-minetest.override_item("mobs:cheese", {
-    groups = {cheese=1},
-})
-end
 
 --------------------xdecor-----------------------------
 
 if  minetest.registered_items["xdecor:honey"] ~= nil then
 minetest.override_item("xdecor:honey", {
-    groups = {sugar=1, honey=1},
+    groups = {food_sugar=1, food_honey=1},
 })
 end
 

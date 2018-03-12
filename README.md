@@ -1,6 +1,6 @@
 Your Dad's BBQ Mod
 ---For Minetest---
-v1.21 by Grizzly Adam
+v1.22 by Grizzly Adam
 
 https://forum.minetest.net/viewtopic.php?f=9&t=19324
 
@@ -22,6 +22,10 @@ Documentation
 For more information about what is in this pack, check the file: description.txt
 
 New In This Version
+-------------------
+Changed food group names to meet the new Ruben Standard.
+
+New In Version 1.21
 -------------------
 Fixed "shadow" texture bug.
 Fixed wood pile bug, where items could not be placed in woodpile.

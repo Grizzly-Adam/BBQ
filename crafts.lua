@@ -195,7 +195,7 @@ minetest.register_node("bbq:vinegar_mother", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	tiles = {"bbq_vinegar_mother.png"},
-	groups = {mother=1, vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {food_vinegarmother=1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 
@@ -547,7 +547,7 @@ minetest.register_craftitem("bbq:pepper", {
 	description = ("Pepper"),
 	inventory_image = "bbq_pepper.png",
 	on_use = minetest.item_eat(7),
-	groups = {pepper=1},
+	groups = {food_pepper=1},
 })
 
 --Smoked Pepper
@@ -562,19 +562,19 @@ minetest.register_craftitem("bbq:tomato", {
 	description = ("Tomato"),
 	inventory_image = "bbq_tomato.png",
 	on_use = minetest.item_eat(3),
-	groups = {tomato=1},
+	groups = {food_tomato=1},
 })
 
 minetest.register_craftitem("bbq:tomato_sauce", {
 	description = ("Tomato Sauce"),
 	inventory_image = "bbq_tomato_sauce.png",
-	groups = { tomato_sauce=1, vessel=1 },
+	groups = { food_tomato_sauce=1, vessel=1 },
 	on_use = minetest.item_eat(2)
 })
 
 minetest.register_craftitem("bbq:onion", {
 	description = ("Onion"),
-	groups= {onion=1},
+	groups= {food_onion=1},
 	inventory_image = "bbq_onion.png",
 	on_use = minetest.item_eat(1)
 })
@@ -584,7 +584,7 @@ minetest.register_craftitem("bbq:garlic", {
 	description = ("Garlic"),
 	inventory_image = "bbq_garlic.png",
 	on_use = minetest.item_eat(1),
-	groups = {garlic = 1},
+	groups = {food_garlic = 1},
 })
 
 --Garlic Braid
@@ -600,7 +600,7 @@ minetest.register_node("bbq:garlic_braid", {
 		"bbq_garlic_braid_side.png^[transformFx","bbq_garlic_braid_side.png",
 		"bbq_garlic_braid.png","bbq_garlic_braid.png"
 	},
-	groups = {garlic_braid=1, vessel = 1, dig_immediate = 3},
+	groups = {food_garlic_braid=1, vessel = 1, dig_immediate = 3},
 	sounds = default.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -620,7 +620,7 @@ minetest.register_node("bbq:garlic_clove", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	tiles = { "bbq_garlic_clove.png" },
-	groups = { garlic_clove=1, snappy=3,flammable=3,flora=1,attached_node=1 },
+	groups = { food_garlic_clove=1, snappy=3,flammable=3,flora=1,attached_node=1 },
 
 })
 
@@ -629,7 +629,7 @@ minetest.register_craftitem("bbq:potato", {
 	description = ("Potato"),
 	inventory_image = "bbq_potato.png",
 	on_use = minetest.item_eat(1),
-	groups = {potato=1},
+	groups = {food_potato=1},
 })
 
 --Corn
@@ -637,7 +637,7 @@ minetest.register_craftitem("bbq:corn", {
 	description = ("Corn"),
 	inventory_image = "bbq_corn.png",
 	on_use = minetest.item_eat(2),
-	groups = {corn=1},
+	groups = {food_corn=1},
 })
 
 --Grilled Tomato
@@ -670,7 +670,7 @@ minetest.register_node("bbq:peppercorn", {
 	paramtype2 = "facedir",
 	drawtype = "plantlike",
 	tiles = { "bbq_peppercorn.png" },
-	groups = { peppercorn = 1, vessel=1, snappy=3,flammable=3,flora=1,attached_node=1 },
+	groups = { food_peppercorn = 1, vessel=1, snappy=3,flammable=3,flora=1,attached_node=1 },
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -696,7 +696,7 @@ minetest.register_node("bbq:pepper_ground", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	tiles = {"bbq_pepper_ground.png"},
-	groups = {pepper_ground = 1, vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {food_pepper_ground = 1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 
@@ -775,7 +775,7 @@ minetest.register_node("bbq:sugar", {
 	paramtype2 = "facedir",
 	drawtype = "plantlike",
 	tiles = {"bbq_sugar.png"},
-	groups = {vessel = 1, sugar=1, dig_immediate = 3, attached_node = 1},
+	groups = {vessel = 1, food_sugar=1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 	on_use = minetest.item_eat(2),
 })
@@ -874,7 +874,7 @@ minetest.register_node("bbq:yeast", {
 	paramtype2 = "facedir",
 	drawtype = "plantlike",
 	tiles = {"bbq_yeast.png"},
-	groups = {mother=1, vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {food_vinegarmother=1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 

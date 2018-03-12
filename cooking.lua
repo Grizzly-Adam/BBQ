@@ -156,7 +156,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:beer",
 	type = "shapeless",
-	recipe = {"bucket:bucket_water", "bbq:yeast", "farming:wheat", "group:sugar", "vessels:drinking_glass"},
+	recipe = {"bucket:bucket_water", "bbq:yeast", "farming:wheat", "group:food_sugar", "vessels:drinking_glass"},
 	replacements = {{"bucket:bucket_water","bucket:bucket_empty"}},
 })
 
@@ -164,7 +164,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:vinegar",
 	type = "shapeless",
-	recipe = {"group:mother", "group:sugar", "bucket:bucket_water"},
+	recipe = {"group:food_vinegarmother", "group:food_sugar", "bucket:bucket_water"},
 	replacements = {{"bucket:bucket_water","bucket:bucket_empty"}},
 })
 
@@ -172,7 +172,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:lamb_kebab_raw 4",
 	type = "shapeless",
-	recipe = {"group:pepper", "mobs:mutton_raw", "default:stick", "flowers:mushroom_brown", "group:onion"}
+	recipe = {"group:food_pepper", "mobs:mutton_raw", "default:stick", "flowers:mushroom_brown", "group:food_onion"}
 })
 
 --Rack of Lamb Craft Recipe
@@ -186,7 +186,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:leg_lamb_raw 2",
 	type = "shapeless",
-	recipe = {"group:garlic_clove", "mobs:mutton_raw", "mobs:mutton_raw"}
+	recipe = {"group:food_garlic_clove", "mobs:mutton_raw", "mobs:mutton_raw"}
 })
 
 --Ham Craft Recipe
@@ -200,7 +200,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:pickled_peppers",
 	type = "shapeless",
-	recipe = {"group:peppercorn", "group:pepper", "bbq:brine"}
+	recipe = {"group:food_peppercorn", "group:food_pepper", "bbq:brine"}
 })
 
 --BBQ Chicken Craft Recipe
@@ -214,21 +214,21 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:bbq_beef_ribs_raw 2",
 	type = "shapeless",
-	recipe = {"bbq:bbq_sauce", "bbq:beef_raw", "group:pepper_ground"}
+	recipe = {"bbq:bbq_sauce", "bbq:beef_raw", "group:food_pepper_ground"}
 })
 
 --Corned Beef Craft Recipe
 minetest.register_craft( {
 	output = "bbq:corned_beef_raw",
 	type = "shapeless",
-	recipe = {"group:peppercorn", "bbq:beef_raw","bbq:brine",}
+	recipe = {"group:food_peppercorn", "bbq:beef_raw","bbq:brine",}
 })
 
 --BBQ Brisket Craft Recipe
 minetest.register_craft( {
 	output = "bbq:brisket_raw 2",
 	type = "shapeless",
-	recipe = {"bbq:bbq_sauce", "bbq:molasses", "bbq:beef_raw", "group:garlic_clove"}
+	recipe = {"bbq:bbq_sauce", "bbq:molasses", "bbq:beef_raw", "group:food_garlic_clove"}
 })
 
 --Hot Wings Craft Recipe
@@ -243,14 +243,14 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:cheese_steak 2",
 	type = "shapeless",
-	recipe = {"farming:bread", "group:pepper", "bbq:beef", "group:cheese", "group:onion"}
+	recipe = {"farming:bread", "group:food_pepper", "bbq:beef", "group:food_cheese", "group:food_onion"}
 })
 
 --Bacon Cheeseburger Craft Recipe
 minetest.register_craft( {
 	output = "bbq:bacon_cheeseburger 3",
 	type = "shapeless",
-	recipe = {"farming:bread", "bbq:bacon", "bbq:hamburger_patty", "group:cheese"}
+	recipe = {"farming:bread", "bbq:bacon", "bbq:hamburger_patty", "group:food_cheese"}
 })
 
 --Hamburger Craft Recipe
@@ -292,7 +292,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:grilled_pizza_raw 3",
 	type = "shapeless",
-	recipe = {"group:cheese", "group:pepper", "bbq:grilled_tomato", "flowers:mushroom_brown", "bbq:sea_salt", "farming:wheat", "bbq:yeast"}
+	recipe = {"group:food_cheese", "group:food_pepper", "bbq:grilled_tomato", "flowers:mushroom_brown", "bbq:sea_salt", "farming:wheat", "bbq:yeast"}
 })
 
 --Bacon Craft Recipe
@@ -306,7 +306,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:london_broil_raw 2",
 	type = "shapeless",
-	recipe = {"bbq:bacon", "group:garlic_clove", "bbq:beef_raw"}
+	recipe = {"bbq:bacon", "group:food_garlic_clove", "bbq:beef_raw"}
 })
 
 --Beef Jerky Craft Recipe
@@ -320,56 +320,56 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:pepper_steak_raw",
 	type = "shapeless",
-	recipe = {"group:pepper_ground", "bbq:beef_raw", "group:pepper_ground"}
+	recipe = {"group:food_pepper_ground", "bbq:beef_raw", "group:food_pepper_ground"}
 })
 
 --Stuffed Chop Craft Recipe
 minetest.register_craft( {
 	output = "bbq:stuffed_chop_raw 3",
 	type = "shapeless",
-	recipe = {"group:onion", "farming:bread", "flowers:mushroom_brown", "mobs:pork_raw", "default:apple"}
+	recipe = {"group:food_onion", "farming:bread", "flowers:mushroom_brown", "mobs:pork_raw", "default:apple"}
 })
 
 --Stuffed Mushroom Craft Recipe
 minetest.register_craft( {
 	output = "bbq:stuffed_mushroom_raw 2",
 	type = "shapeless",
-	recipe = {"group:tomato", "farming:bread", "flowers:mushroom_brown"}
+	recipe = {"group:food_tomato", "farming:bread", "flowers:mushroom_brown"}
 })
 
 --Veggie Kebab Craft Recipe
 minetest.register_craft( {
 	output = "bbq:veggie_kebab_raw 2",
 	type = "shapeless",
-	recipe = {"group:pepper", "group:potato", "group:tomato", "flowers:mushroom_brown", "default:stick"}
+	recipe = {"group:food_pepper", "group:food_potato", "group:food_tomato", "flowers:mushroom_brown", "default:stick"}
 })
 
 --Veggie Packet Craft Recipe
 minetest.register_craft( {
 	output = "bbq:veggie_packet_raw 2",
 	type = "shapeless",
-	recipe = {"bbq:pepper_ground", "group:tomato", "group:potato", "group:corn", "bbq:foil"}
+	recipe = {"bbq:pepper_ground", "group:food_tomato", "group:food_potato", "group:food_corn", "bbq:foil"}
 })
 
 --Portebello Steak Craft Recipe
 minetest.register_craft( {
 	output = "bbq:portebello_steak_raw",
 	type = "shapeless",
-	recipe = {"group:pepper_ground", "bbq:steak_sauce", "flowers:mushroom_brown"}
+	recipe = {"group:food_pepper_ground", "bbq:steak_sauce", "flowers:mushroom_brown"}
 })
 
 --Stuffed Pepper Craft Recipe
 minetest.register_craft( {
 	output = "bbq:stuffed_pepper_raw 3",
 	type = "shapeless",
-	recipe = {"group:cheese", "farming:bread", "group:pepper"}
+	recipe = {"group:food_cheese", "farming:bread", "group:food_pepper"}
 })
 
 --Grilled Corn Craft Recipe
 minetest.register_craft( {
 	output = "bbq:grilled_corn_raw 2",
 	type = "shapeless",
-	recipe = {"group:cheese", "bbq:paprika", "group:corn"}
+	recipe = {"group:food_cheese", "bbq:paprika", "group:food_corn"}
 })
 
 ---------------------
@@ -380,15 +380,15 @@ if  minetest.registered_items["crops:tomato"] ~= nil then
 minetest.register_craft({
 	type = "shapeless",
 	output = "bbq:tomato_sauce",
-	recipe = { "group:tomato" },
-    replacements = {{"group:tomato","crops:tomato_seed"}}
+	recipe = { "group:food_tomato" },
+    replacements = {{"group:food_tomato","crops:tomato_seed"}}
 })
 else
 
 minetest.register_craft({
 	type = "shapeless",
 	output = "bbq:tomato_sauce",
-	recipe = { "group:tomato" },
+	recipe = { "group:food_tomato" },
 })
 end
 
@@ -405,16 +405,16 @@ minetest.register_craft( {
 minetest.register_craft({
 	type = "shapeless",
 	output = "bbq:garlic_clove 9",
-	recipe = { "group:garlic" }
+	recipe = { "group:food_garlic" }
 })
 
 --Garlic Braid Craft Recipe
 minetest.register_craft({
 	output = "bbq:garlic_braid",
 	recipe = { 
-		{"group:garlic", "group:garlic", "group:garlic"},
-		{"group:garlic", "group:garlic", "group:garlic"},
-		{"group:garlic", "group:garlic", "group:garlic"}
+		{"group:food_garlic", "group:food_garlic", "group:food_garlic"},
+		{"group:food_garlic", "group:food_garlic", "group:food_garlic"},
+		{"group:food_garlic", "group:food_garlic", "group:food_garlic"}
 	}
 })
 
@@ -422,21 +422,21 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "shapeless",
 	output = "bbq:garlic 9",
-	recipe = { "group:garlic_braid" }
+	recipe = { "group:food_garlic_braid" }
 })
 
 --Ground Pepper Craft Recipe
 minetest.register_craft( {
 	output = "bbq:pepper_ground",
 	type = "shapeless",
-	recipe = {"group:peppercorn", "vessels:glass_bottle"}
+	recipe = {"group:food_peppercorn", "vessels:glass_bottle"}
 })
 
 --Brine
 minetest.register_craft( {
 	output = "bbq:brine",
 	type = "shapeless",
-	recipe = {"bbq:sea_salt", "group:sugar", "bucket:bucket_water", "vessels:drinking_glass"},
+	recipe = {"bbq:sea_salt", "group:food_sugar", "bucket:bucket_water", "vessels:drinking_glass"},
 	replacements = {{"bucket:bucket_water","bucket:bucket_empty"}},
 })
 
@@ -469,7 +469,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:hot_sauce",
 	type = "shapeless",
-	recipe = {"group:pepper_ground", "bucket:bucket_water", "bbq:paprika", "vessels:glass_bottle"},
+	recipe = {"group:food_pepper_ground", "bucket:bucket_water", "bbq:paprika", "vessels:glass_bottle"},
 	replacements = {{"bucket:bucket_water","bucket:bucket_empty"}},
 })
 
@@ -477,7 +477,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:bbq_sauce",
 	type = "shapeless",
-	recipe = {"bbq:molasses", "group:sugar", "group:tomato_sauce", "bbq:liquid_smoke", "bbq:vinegar"},
+	recipe = {"bbq:molasses", "group:food_sugar", "group:food_tomato_sauce", "bbq:liquid_smoke", "bbq:vinegar"},
 	replacements = {{"bbq:vinegar","bbq:vinegar_mother"}},
 })
 
@@ -579,7 +579,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "bbq:smoked_pepper",
-	recipe = "group:pepper",
+	recipe = "group:food_pepper",
 	cooktime = 9,
 })
 
@@ -691,7 +691,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "bbq:grilled_tomato",
-	recipe = "group:tomato",
+	recipe = "group:food_tomato",
 	cooktime = 4,
 })
 
