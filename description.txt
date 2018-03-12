@@ -1,12 +1,11 @@
 Your Dad's BBQ Mod
 ---For Minetest---
 
-Depends on (and expands upon) Mobs-Redo and it's animals add-ons.
-Causes cows to drop beef and sheep to drop mutton.
+Cause Mobs-Redo cows to drop beef.
 
 Play's nice with Crops, Food, and Farming Redo addons. Can use potatos, corn, tomatos, chili peppers, cheese, sugar, and honey from Crops, Food, Farming Redo, Mobs-Redo and xDecor add-ons. Also compatible with Crops Plus, my expansion of the Crops add-on (adds peppers, peppercorns, and ground pepper to the Crops add-on, all are present in this addon but without the actual pepper plant).
 
-Upgrades the BTUs of wood and wood planks in a realistic way when used in furnaces (including the smoker). Allows trees, slabs, and sticks to be stored in woodpile.
+Upgrades the BTUs of wood and wood planks in a realistic way when used in furnaces (including the smoker). Allows trees, planks, wooden slabs, wooden stairs, and sticks to be stored in woodpile.
 Adds propane and charcoal fuels.
 
 All spices and sauces can be placed on the vessels shelf. Also added support for placing the bucket in the vessels shelf.
