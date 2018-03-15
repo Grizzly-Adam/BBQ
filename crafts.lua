@@ -709,7 +709,7 @@ minetest.register_node("bbq:sea_salt", {
 	paramtype2 = "facedir",
 	drawtype = "plantlike",
 	tiles = {"bbq_sea_salt.png"},
-	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {food_salt=1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 

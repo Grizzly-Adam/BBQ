@@ -302,7 +302,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:grilled_pizza_raw 3",
 	type = "shapeless",
-	recipe = {"group:food_cheese", "group:food_pepper", "bbq:grilled_tomato", "flowers:mushroom_brown", "bbq:sea_salt", "farming:wheat", "bbq:yeast"}
+	recipe = {"group:food_cheese", "group:food_pepper", "bbq:grilled_tomato", "flowers:mushroom_brown", "group:food_salt", "farming:wheat", "bbq:yeast"}
 })
 
 --Bacon Craft Recipe
@@ -446,7 +446,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:brine",
 	type = "shapeless",
-	recipe = {"bbq:sea_salt", "group:food_sugar", "bucket:bucket_water", "vessels:drinking_glass"},
+	recipe = {"group:food_salt", "group:food_sugar", "bucket:bucket_water", "vessels:drinking_glass"},
 	replacements = {{"bucket:bucket_water","bucket:bucket_empty"}},
 })
 
