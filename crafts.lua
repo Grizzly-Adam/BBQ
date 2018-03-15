@@ -542,14 +542,6 @@ minetest.register_craftitem("bbq:stuffed_pepper_raw", {
 	on_use = minetest.item_eat(4),
 })
 
---Bell Pepper
-minetest.register_craftitem("bbq:pepper", {
-	description = ("Pepper"),
-	inventory_image = "bbq_pepper.png",
-	on_use = minetest.item_eat(7),
-	groups = {food_pepper=1},
-})
-
 --Smoked Pepper
 minetest.register_craftitem("bbq:smoked_pepper", {
 	description = ("Smoked Pepper"),
@@ -557,87 +549,12 @@ minetest.register_craftitem("bbq:smoked_pepper", {
 	on_use = minetest.item_eat(5),
 })
 
---Tomato
-minetest.register_craftitem("bbq:tomato", {
-	description = ("Tomato"),
-	inventory_image = "bbq_tomato.png",
-	on_use = minetest.item_eat(3),
-	groups = {food_tomato=1},
-})
-
+--Tomato Sauce
 minetest.register_craftitem("bbq:tomato_sauce", {
 	description = ("Tomato Sauce"),
 	inventory_image = "bbq_tomato_sauce.png",
 	groups = { food_tomato_sauce=1, vessel=1 },
 	on_use = minetest.item_eat(2)
-})
-
-minetest.register_craftitem("bbq:onion", {
-	description = ("Onion"),
-	groups= {food_onion=1},
-	inventory_image = "bbq_onion.png",
-	on_use = minetest.item_eat(1)
-})
-
---Garlic
-minetest.register_craftitem("bbq:garlic", {
-	description = ("Garlic"),
-	inventory_image = "bbq_garlic.png",
-	on_use = minetest.item_eat(1),
-	groups = {food_garlic = 1},
-})
-
---Garlic Braid
-minetest.register_node("bbq:garlic_braid", {
-	description = ("Garlic Braid"),
-	inventory_image = "bbq_garlic_braid.png",
-	wield_image = "bbq_garlic_braid.png",
-	drawtype = "nodebox",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	tiles = {
-		"bbq_garlic_braid_side.png","bbq_garlic_braid.png",
-		"bbq_garlic_braid_side.png^[transformFx","bbq_garlic_braid_side.png",
-		"bbq_garlic_braid.png","bbq_garlic_braid.png"
-	},
-	groups = {food_garlic_braid=1, vessel = 1, dig_immediate = 3},
-	sounds = default.node_sound_leaves_defaults(),
-	node_box = {
-		type = "fixed",
-		fixed = {
-				{-0.13, -0.45, 0.5, 0.13, 0.45, 0.24,
-
-			},
-		},
-	}
-})
-
---Garlic Clove
-minetest.register_node("bbq:garlic_clove", {
-	description = ("Garlic Clove"),
-	inventory_image = "bbq_garlic_clove.png",
-	wield_image = "bbq_garlic_clove.png",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	tiles = { "bbq_garlic_clove.png" },
-	groups = { food_garlic_clove=1, snappy=3,flammable=3,flora=1,attached_node=1 },
-
-})
-
---Potato
-minetest.register_craftitem("bbq:potato", {
-	description = ("Potato"),
-	inventory_image = "bbq_potato.png",
-	on_use = minetest.item_eat(1),
-	groups = {food_potato=1},
-})
-
---Corn
-minetest.register_craftitem("bbq:corn", {
-	description = ("Corn"),
-	inventory_image = "bbq_corn.png",
-	on_use = minetest.item_eat(2),
-	groups = {food_corn=1},
 })
 
 --Grilled Tomato
@@ -661,19 +578,6 @@ minetest.register_craftitem("bbq:grilled_corn_raw", {
 	on_use = minetest.item_eat(5),
 })
 
---Peppercorn
-minetest.register_node("bbq:peppercorn", {
-	description = ("Peppercorn"),
-	inventory_image = "bbq_peppercorn.png",
-	wield_image = "bbq_peppercorn.png",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	drawtype = "plantlike",
-	tiles = { "bbq_peppercorn.png" },
-	groups = { food_peppercorn = 1, vessel=1, snappy=3,flammable=3,flora=1,attached_node=1 },
-	sounds = default.node_sound_leaves_defaults(),
-})
-
 --Paprika
 minetest.register_node("bbq:paprika", {
 	description = ("Smoked Paprika"),
@@ -684,19 +588,6 @@ minetest.register_node("bbq:paprika", {
 	paramtype2 = "facedir",
 	tiles = {"bbq_paprika.png"},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
-	sounds = default.node_sound_glass_defaults(),
-})
-
---Ground Pepper
-minetest.register_node("bbq:pepper_ground", {
-	description = ("Ground Pepper"),
-	inventory_image = "bbq_pepper_ground.png",
-	wield_image = "bbq_pepper_ground.png",
-	drawtype = "plantlike",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	tiles = {"bbq_pepper_ground.png"},
-	groups = {food_pepper_ground = 1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 

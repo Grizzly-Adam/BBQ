@@ -35,22 +35,11 @@ Spatula
 Basting Brush
 Grill Brush
 
-Peppercorn
-Ground Pepper
 Paprika
 Sea Salt
 Sugar
 Molasses (byproduct of Sugar)
 Yeast (Can be found when harvesting grass and jungle grass)
-
-Bell Pepper
-Tomato
-Potato
-Corn
-Garlic
-Garlic Clove
-Garlic Braid
-Onion
 
 Brine
 Liquid Smoke

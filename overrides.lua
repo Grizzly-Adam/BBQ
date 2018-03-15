@@ -9,81 +9,33 @@ minetest.register_alias("bbq:wood_pile", "bbq:woodpile_aspen")
 --COMPATIBILITY WITH CROPS
 --------------------------
 
-if minetest.registered_items["crops:garlic_clove"] ~= 1 then
-minetest.override_item("bbq:garlic_clove", {
-
-	tiles = { "crops_garlic_plant_1.png" },
-	drawtype = "plantlike",
-	paramtype2 = "meshoptions",
-	waving = 1,
-	sunlight_propagates = false,
-	use_texture_alpha = true,
-	walkable = false,
-	paramtype = "light",
-	node_placement_prediction = "crops:garlic_plant_1",
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.45, -0.5, -0.45,  0.45, -0.4, 0.45}
-	},
-
-	on_place = function(itemstack, placer, pointed_thing)
-		local under = minetest.get_node(pointed_thing.under)
-		if minetest.get_item_group(under.name, "soil") <= 1 then
-			return
-		end
-		crops.plant(pointed_thing.above, {name="crops:garlic_plant_1", param2 = 3})
-		if not minetest.setting_getbool("creative_mode") then
-			itemstack:take_item()
-		end
-		return itemstack
-	end
-})
-end
-
-if minetest.registered_items["crops:peppercorn"] ~= 1 then
-minetest.override_item("bbq:peppercorn", {
-
-		on_place =function(itemstack, placer, pointed_thing)
-		local under = minetest.get_node(pointed_thing.under)
-		if minetest.get_item_group(under.name, "soil") <= 1 then
-			return
-		end
-		crops.plant(pointed_thing.above, {name="crops:pepper_plant_1", param2 = 1})
-		if not minetest.setting_getbool("creative_mode") then
-			itemstack:take_item()
-		end
-		return itemstack
-	end
-})
-end
-
 if  minetest.registered_items["crops:tomato"] ~= nil then
 minetest.override_item("crops:tomato", {
-    groups = {tomato=1},
+    groups = {food_tomato=1},
 })
 end
 
 if  minetest.registered_items["crops:pepper"] ~= nil then
 minetest.override_item("crops:pepper", {
-    groups = {pepper=1},
+    groups = {food_pepper=1},
 })
 end
 
 if  minetest.registered_items["crops:peppercorn"] ~= nil then
 minetest.override_item("crops:peppercorn", {
-    groups = {peppercorn=1},
+    groups = {food_peppercorn=1},
 })
 end
 
 if  minetest.registered_items["crops:corn_cob"] ~= nil then
 minetest.override_item("crops:corn_cob", {
-    groups = {corn=1},
+    groups = {food_corn=1},
 })
 end
 
 if  minetest.registered_items["crops:potato"] ~= nil then
 minetest.override_item("crops:potato", {
-    groups = {potato=1},
+    groups = {food_potato=1},
 })
 end
 
