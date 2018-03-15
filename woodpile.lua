@@ -52,12 +52,7 @@ minetest.register_node("bbq:woodpile", {
 		local inv = minetest.get_meta(pos):get_inventory()
 		return inv:is_empty("bbq")
 	end,
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
-			return stack:get_count()
-		end
-		return 0
-	end,
+
 	on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		minetest.log("action", player:get_player_name() ..
 			   " moves stuff in bbq woodpile at ".. minetest.pos_to_string(pos))
@@ -105,12 +100,7 @@ minetest.register_node("bbq:woodpile_acacia", {
 		local inv = minetest.get_meta(pos):get_inventory()
 		return inv:is_empty("bbq")
 	end,
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
-			return stack:get_count()
-		end
-		return 0
-	end,
+
 	on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		minetest.log("action", player:get_player_name() ..
 			   " moves stuff in bbq woodpile at ".. minetest.pos_to_string(pos))
@@ -158,12 +148,7 @@ minetest.register_node("bbq:woodpile_pine", {
 		local inv = minetest.get_meta(pos):get_inventory()
 		return inv:is_empty("bbq")
 	end,
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
-			return stack:get_count()
-		end
-		return 0
-	end,
+
 	on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		minetest.log("action", player:get_player_name() ..
 			   " moves stuff in bbq woodpile at ".. minetest.pos_to_string(pos))
@@ -211,12 +196,7 @@ minetest.register_node("bbq:woodpile_junglewood", {
 		local inv = minetest.get_meta(pos):get_inventory()
 		return inv:is_empty("bbq")
 	end,
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
-			return stack:get_count()
-		end
-		return 0
-	end,
+
 	on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		minetest.log("action", player:get_player_name() ..
 			   " moves stuff in bbq woodpile at ".. minetest.pos_to_string(pos))
@@ -264,12 +244,7 @@ minetest.register_node("bbq:woodpile_aspen", {
 		local inv = minetest.get_meta(pos):get_inventory()
 		return inv:is_empty("bbq")
 	end,
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if minetest.get_item_group(stack:get_name(), "wood_pile") ~= 0 then
-			return stack:get_count()
-		end
-		return 0
-	end,
+
 	on_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		minetest.log("action", player:get_player_name() ..
 			   " moves stuff in bbq woodpile at ".. minetest.pos_to_string(pos))
