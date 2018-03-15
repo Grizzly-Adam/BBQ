@@ -258,7 +258,7 @@ end
 -------------------
 
 minetest.register_node("bbq:propane_grill_pro", {
-	description = "propane_grill",
+	description = "Propane Grill Pro",
 	tiles = {
 		"bbq_propane_grill_top.png", "bbq_propane_grill_bottom.png",
 		"bbq_propane_grill_side.png", "bbq_propane_grill_side.png",
@@ -319,7 +319,7 @@ minetest.register_node("bbq:propane_grill_pro", {
 })
 
 minetest.register_node("bbq:propane_grill_pro_active", {
-	description = "propane_grill_pro",
+	description = "Propane Grill Pro",
 
 
 
