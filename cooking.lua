@@ -193,7 +193,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:ham_raw 2",
 	type = "shapeless",
-	recipe = {"bbq:brine", "mobs:pork_raw", "group:honey"}
+	recipe = {"bbq:brine", "mobs:pork_raw", "group:food_honey"}
 })
 
 --Pickled Peppers Recipe
