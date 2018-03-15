@@ -22,12 +22,22 @@ minetest.register_craft( {
 	}
 })
 
+--Propane Grill Pro Craft Recipe
+minetest.register_craft( {
+	output = "bbq:propane_grill_pro",
+	recipe = {
+		{"default:steel_ingot", "default:glass", "default:steel_ingot"},
+		{"default:steel_ingot", "bbq:propane", "default:steel_ingot"},
+		{"", "default:steel_ingot", ""}
+	}
+})
+
 --Propane Grill Craft Recipe
 minetest.register_craft( {
 	output = "bbq:propane_grill",
 	recipe = {
 		{"default:steel_ingot", "default:glass", "default:steel_ingot"},
-		{"default:steel_ingot", "bbq:propane", "default:steel_ingot"},
+		{"", "bbq:propane", ""},
 		{"", "default:steel_ingot", ""}
 	}
 })

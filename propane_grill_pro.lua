@@ -3,7 +3,7 @@
 -- Formspecs
 --
 
-function default.get_propane_grill_active_formspec(fuel_percent, item_percent)
+function default.get_propane_grill_pro_active_formspec(fuel_percent, item_percent)
 	return "size[8,8.5]"..
 		default.gui_bg..
 		default.gui_bg_img..
@@ -26,7 +26,7 @@ function default.get_propane_grill_active_formspec(fuel_percent, item_percent)
 		default.get_hotbar_bg(0, 4.25)
 end
 
-function default.get_propane_grill_inactive_formspec()
+function default.get_propane_grill_pro_inactive_formspec()
 	return "size[8,8.5]"..
 		default.gui_bg..
 		default.gui_bg_img..
@@ -48,7 +48,7 @@ function default.get_propane_grill_inactive_formspec()
 end
 
 --
--- Node callback functions that are the same for active and inactive propane_grill
+-- Node callback functions that are the same for active and inactive propane_grill_pro
 --
 
 local function can_dig(pos, player)
@@ -66,7 +66,7 @@ local function allow_metadata_inventory_put(pos, listname, index, stack, player)
 	if listname == "fuel" then
 		if minetest.get_craft_result({method="fuel", width=1, items={stack}}).time ~= 0 then
 			if inv:is_empty("src") then
-				meta:set_string("infotext", "propane_grill is empty")
+				meta:set_string("infotext", "propane_grill_pro is empty")
 			end
 			return stack:get_count()
 		else
@@ -102,7 +102,7 @@ local function swap_node(pos, name)
 	minetest.swap_node(pos, node)
 end
 
-local function propane_grill_node_timer(pos, elapsed)
+local function propane_grill_pro_node_timer(pos, elapsed)
 	--
 	-- Inizialize metadata
 	--
@@ -142,7 +142,7 @@ local function propane_grill_node_timer(pos, elapsed)
 
 		-- Check if we have enough fuel to burn
 		if fuel_time < fuel_totaltime then
-			-- The propane_grill is currently active and has enough fuel
+			-- The propane_grill_pro is currently active and has enough fuel
 			fuel_time = fuel_time + el
 			-- If there is a cookable item then check if it is ready yet
 			if cookable then
@@ -161,7 +161,7 @@ local function propane_grill_node_timer(pos, elapsed)
 				end
 			end
 		else
-			-- propane_grill ran out of fuel
+			-- propane_grill_pro ran out of fuel
 			if cookable then
 				-- We need to get new fuel
 				local afterfuel
@@ -224,21 +224,21 @@ local function propane_grill_node_timer(pos, elapsed)
 		active = "active"
 		local fuel_percent = math.floor(fuel_time / fuel_totaltime * 100)
 		fuel_state = fuel_percent .. "%"
-		formspec = default.get_propane_grill_active_formspec(fuel_percent, item_percent)
-		swap_node(pos, "bbq:propane_grill_active")
+		formspec = default.get_propane_grill_pro_active_formspec(fuel_percent, item_percent)
+		swap_node(pos, "bbq:propane_grill_pro_active")
 		-- make sure timer restarts automatically
 		result = true
 	else
 		if not fuellist[1]:is_empty() then
 			fuel_state = "0%"
 		end
-		formspec = default.get_propane_grill_inactive_formspec()
-		swap_node(pos, "bbq:propane_grill")
-		-- stop timer on the inactive propane_grill
+		formspec = default.get_propane_grill_pro_inactive_formspec()
+		swap_node(pos, "bbq:propane_grill_pro")
+		-- stop timer on the inactive propane_grill_pro
 		minetest.get_node_timer(pos):stop()
 	end
 
-	local infotext = "propane_grill " .. active .. "\n(Item: " .. item_state ..
+	local infotext = "propane_grill_pro " .. active .. "\n(Item: " .. item_state ..
 		"; Fuel: " .. fuel_state .. ")"
 
 	--
@@ -257,7 +257,7 @@ end
 -- Node definitions
 -------------------
 
-minetest.register_node("bbq:propane_grill", {
+minetest.register_node("bbq:propane_grill_pro", {
 	description = "propane_grill",
 	tiles = {
 		"bbq_propane_grill_top.png", "bbq_propane_grill_bottom.png",
@@ -271,6 +271,7 @@ minetest.register_node("bbq:propane_grill", {
 	node_box = {
 		type = "fixed",
 		fixed = {
+				{-1, 0.2, -0.5, 1, 0.25, 0.5},-- wings
 				{-0.5, -0.5, -0.5, 0.5, 0.25, 0.5}, -- main body
 				{-0.5, 0.25, -0.5, 0.5, 0.68, 0.5}, -- top
 			},
@@ -284,11 +285,11 @@ minetest.register_node("bbq:propane_grill", {
 
 	can_dig = can_dig,
 
-	on_timer = propane_grill_node_timer,
+	on_timer = propane_grill_pro_node_timer,
 
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
-		meta:set_string("formspec", default.get_propane_grill_inactive_formspec())
+		meta:set_string("formspec", default.get_propane_grill_pro_inactive_formspec())
 		local inv = meta:get_inventory()
 		inv:set_size('src', 1)
 		inv:set_size('fuel', 1	)
@@ -299,7 +300,7 @@ minetest.register_node("bbq:propane_grill", {
 		minetest.get_node_timer(pos):start(1.0)
 	end,
 	on_metadata_inventory_put = function(pos)
-		-- start timer function, it will sort out whether propane_grill can burn or not.
+		-- start timer function, it will sort out whether propane_grill_pro can burn or not.
 		minetest.get_node_timer(pos):start(1.0)
 	end,
 	on_blast = function(pos)
@@ -307,7 +308,7 @@ minetest.register_node("bbq:propane_grill", {
 		default.get_inventory_drops(pos, "src", drops)
 		default.get_inventory_drops(pos, "fuel", drops)
 		default.get_inventory_drops(pos, "dst", drops)
-		drops[#drops+1] = "bbq:propane_grill"
+		drops[#drops+1] = "bbq:propane_grill_pro"
 		minetest.remove_node(pos)
 		return drops
 	end,
@@ -317,8 +318,8 @@ minetest.register_node("bbq:propane_grill", {
 	allow_metadata_inventory_take = allow_metadata_inventory_take,
 })
 
-minetest.register_node("bbq:propane_grill_active", {
-	description = "propane_grill",
+minetest.register_node("bbq:propane_grill_pro_active", {
+	description = "propane_grill_pro",
 
 
 
@@ -367,6 +368,7 @@ minetest.register_node("bbq:propane_grill_active", {
 	node_box = {
 		type = "fixed",
 		fixed = {
+				{-1, 0.2, -0.5, 1, 0.25, 0.5},-- wings
 				{-0.5, -0.5, -0.5, 0.5, 0.25, 0.5}, -- main body
 				{-0.5, 0.25, -0.5, 0.5, 0.68, 0.5}, -- top
 			},
@@ -374,12 +376,12 @@ minetest.register_node("bbq:propane_grill_active", {
 
 
 	sunlight_propagates = true,
-	drop = "bbq:propane_grill",
+	drop = "bbq:propane_grill_pro",
 	groups = {cracky=2, not_in_creative_inventory=1},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
 	sounds = default.node_sound_stone_defaults(),
-	on_timer = propane_grill_node_timer,
+	on_timer = propane_grill_pro_node_timer,
 
 	can_dig = can_dig,
 
