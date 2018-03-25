@@ -435,13 +435,6 @@ minetest.register_craft({
 	recipe = { "group:food_garlic_braid" }
 })
 
---Ground Pepper Craft Recipe
-minetest.register_craft( {
-	output = "bbq:pepper_ground",
-	type = "shapeless",
-	recipe = {"group:food_peppercorn", "vessels:glass_bottle"}
-})
-
 --Brine
 minetest.register_craft( {
 	output = "bbq:brine",
