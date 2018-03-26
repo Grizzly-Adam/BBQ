@@ -358,7 +358,7 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "bbq:veggie_packet_raw 2",
 	type = "shapeless",
-	recipe = {"bbq:pepper_ground", "group:food_tomato", "group:food_potato", "group:food_corn", "bbq:foil"}
+	recipe = {"group:food_pepper_ground", "group:food_tomato", "group:food_potato", "group:food_corn", "bbq:foil"}
 })
 
 --Portebello Steak Craft Recipe
