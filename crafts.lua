@@ -91,7 +91,7 @@ minetest.register_craft({
 	burntime = 25,
 })
 
--- Charcoal Bag	
+-- Charcoal Bag
 minetest.register_node("bbq:charcoal_bag", {
 	description = ("Bag o' Charcoal"),
 	inventory_image = "bbq_charcoal_bag.png",
@@ -788,8 +788,45 @@ minetest.register_craftitem("bbq:beef", {
 })
 
 ------------
---Utinsels--
+--Utensils--
 ------------
+
+local cold_grills = {
+	"bbq:kettle_grill",
+	"bbq:propane_grill",
+	"bbq:propane_grill_pro",
+	"bbq:smoker",
+}
+
+local hot_grills = {
+	"bbq:kettle_grill_active",
+	"bbq:propane_grill_active",
+	"bbq:propane_grill_pro_active",
+	"bbq:smoker_active",
+}
+
+local function on_use_play_sound(sound, use_on_cold)
+	return function(itemstack, placer, pointed_thing)
+		if not pointed_thing or pointed_thing.type ~= "node" then return end
+		local under_pos       = pointed_thing.under
+		local under_node_name = minetest.get_node(under_pos).name
+		for _, grill_name in ipairs(hot_grills) do
+			if under_node_name == grill_name then
+				minetest.sound_play(sound, { pos = under_pos, max_hear_distance = 10 })
+				return
+			end
+		end
+		if use_on_cold then
+			for _, grill_name in ipairs(cold_grills) do
+				if under_node_name == grill_name then
+					minetest.sound_play(sound, { pos = under_pos, max_hear_distance = 10 })
+					return
+				end
+			end
+		end
+	end
+end
+
 
 --Spatula
 minetest.register_node("bbq:spatula", {
@@ -798,8 +835,6 @@ minetest.register_node("bbq:spatula", {
 	wield_image = "bbq_spatula.png",
 	groups = {dig_immediate = 3, cracky=1, oddly_breakable_by_hand=1},
 	sounds = default.node_sound_metal_defaults(),
-
-
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -819,30 +854,7 @@ minetest.register_node("bbq:spatula", {
 --				{-0.15, -0.45, 0.5, 0.125, -.1, 0.45,},
 		},
 	},
-
-on_use = function(itemstack, placer, pointed_thing)
-
-	-- check if a grill
-	if minetest.get_node(pointed_thing.under).name == "bbq:kettle_grill_active" then
-		     minetest.sound_play("bbq_sizzle",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-
-	else
-
-	if minetest.get_node(pointed_thing.under).name == "bbq:propane_grill_active" then
-		     minetest.sound_play("bbq_sizzle",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-
-	else
-
-	if minetest.get_node(pointed_thing.under).name == "bbq:smoker_active" then
-		     minetest.sound_play("bbq_sizzle",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-			end
-		end
-	end
-end
-
+	on_use = on_use_play_sound("bbq_sizzle"),
 })
 
 --Basting Brush
@@ -852,8 +864,6 @@ minetest.register_node("bbq:basting_brush", {
 	wield_image = "bbq_basting_brush.png",
 	groups = {dig_immediate = 3, cracky=1, oddly_breakable_by_hand=1},
 	sounds = default.node_sound_metal_defaults(),
-
-
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -874,30 +884,7 @@ minetest.register_node("bbq:basting_brush", {
 				{-0.03, .465, 0.5, 0.03, .5, 0.45,},
 		},
 	},
-
-on_use = function(itemstack, placer, pointed_thing)
-
-	-- check if a grill
-	if minetest.get_node(pointed_thing.under).name == "bbq:kettle_grill_active" then
-		     minetest.sound_play("bbq_basting",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-
-	else
-
-	if minetest.get_node(pointed_thing.under).name == "bbq:propane_grill_active" then
-		     minetest.sound_play("bbq_basting",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-
-	else
-
-	if minetest.get_node(pointed_thing.under).name == "bbq:smoker_active" then
-		     minetest.sound_play("bbq_basting",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-			end
-		end
-	end
-end
-
+	on_use = on_use_play_sound("bbq_basting"),
 })
 
 --Grill Brush
@@ -907,8 +894,6 @@ minetest.register_node("bbq:grill_brush", {
 	wield_image = "bbq_grill_brush.png",
 	groups = {dig_immediate = 3, cracky=1, oddly_breakable_by_hand=1},
 	sounds = default.node_sound_metal_defaults(),
-
-
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -930,28 +915,5 @@ minetest.register_node("bbq:grill_brush", {
 				{-0.03, .485, 0.5, 0.03, .5, 0.45,},
 		},
 	},
-
-on_use = function(itemstack, placer, pointed_thing)
-
-	-- check if a grill
-	if minetest.get_node(pointed_thing.under).name == "bbq:kettle_grill_active" then
-		     minetest.sound_play("bbq_grill_brush",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-
-	else
-
-	if minetest.get_node(pointed_thing.under).name == "bbq:propane_grill_active" then
-		     minetest.sound_play("bbq_grill_brush",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-
-	else
-
-	if minetest.get_node(pointed_thing.under).name == "bbq:smoker_active" then
-		     minetest.sound_play("bbq_grill_brush",
-				{pos=pointed_thing.under, max_hear_distance = 10,})
-			end
-		end
-	end
-end
-
+	on_use = on_use_play_sound("bbq_grill_brush", true),
 })
