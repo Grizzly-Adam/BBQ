@@ -1,3 +1,25 @@
+-- Function to add groups to existing items
+local function add_groups(itemstring, ...)
+    local def = minetest.registered_items[itemstring]
+    if not def then
+        minetest.log("warning", ("[BBQ] trying to add groups to unknown item %q"):format(itemstring))
+		return
+    end
+    local groups = table.copy(def.groups or {})
+    for _, group in ipairs({ ... }) do
+        local g, v = group:match("^([^=]+)=([^=]+)$")
+        if g and v then
+            group = g
+            v = tonumber(v) or 1
+        else
+            v = 1
+        end
+        groups[group] = v
+    end
+    minetest.override_item(itemstring, { groups = groups })
+end
+
+
 ---------
 --ALIASES
 ---------
@@ -10,42 +32,30 @@ minetest.register_alias("bbq:wood_pile", "bbq:woodpile_aspen")
 --------------------------
 
 if  minetest.registered_items["crops:tomato"] ~= nil then
-minetest.override_item("crops:tomato", {
-    groups = {food_tomato=1},
-})
+	add_groups("crops:tomato", "food_tomato")
 end
 
 if  minetest.registered_items["crops:pepper"] ~= nil then
-minetest.override_item("crops:pepper", {
-    groups = {food_pepper=1},
-})
+	add_groups("crops:pepper", "food_pepper")
 end
 
 if  minetest.registered_items["crops:peppercorn"] ~= nil then
-minetest.override_item("crops:peppercorn", {
-    groups = {food_peppercorn=1},
-})
+	add_groups("crops:peppercorn", "food_peppercorn")
 end
 
 if  minetest.registered_items["crops:corn_cob"] ~= nil then
-minetest.override_item("crops:corn_cob", {
-    groups = {food_corn=1},
-})
+	add_groups("crops:corn_cob", "food_corn")
 end
 
 if  minetest.registered_items["crops:potato"] ~= nil then
-minetest.override_item("crops:potato", {
-    groups = {food_potato=1},
-})
+	add_groups("crops:potato", "food_potato")
 end
 
 
 --------------------xdecor-----------------------------
 
 if  minetest.registered_items["xdecor:honey"] ~= nil then
-minetest.override_item("xdecor:honey", {
-    groups = {food_sugar=1, food_honey=1},
-})
+	add_groups("xdecor:honey", "food_sugar", "food_honey")
 end
 
 ---------------------------------
@@ -88,27 +98,14 @@ minetest.override_item("default:junglegrass", {drop = {
 --MAKE VESSEL TYPE ITEMS WORK WITH VESSEL SHELF
 -----------------------------------------------
 if  minetest.registered_items["bucket:bucket_empty"] ~= nil then
-minetest.override_item("bucket:bucket_empty", {
-    groups = {vessel=1},
-})
-
-minetest.override_item("bucket:bucket_water", {
-    groups = {vessel=1},
-})
-
-minetest.override_item("bucket:bucket_river_water", {
-    groups = {vessel=1},
-})
-
-minetest.override_item("bucket:bucket_lava", {
-    groups = {vessel=1},
-})
+	add_groups("bucket:bucket_empty", "vessel")
+	add_groups("bucket:bucket_water", "vessel")
+	add_groups("bucket:bucket_river_water", "vessel")
+	add_groups("bucket:bucket_lava", "vessel")
 end
 
 if  minetest.registered_items["mobs:bucket_milk"] ~= nil then
-minetest.override_item("mobs:bucket_milk", {
-    groups = {vessel=1},
-})
+	add_groups("mobs:bucket_milk", "vessel")
 end
 
 ----------------------
