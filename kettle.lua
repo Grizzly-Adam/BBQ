@@ -325,6 +325,20 @@ minetest.register_node("bbq:kettle_grill", {
 		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z},{name = "bbq:kettle_grill", param2=minetest.dir_to_facedir(placer:get_look_dir())});
     end,
 
+	on_place = function(itemstack, placer, pointed_thing)
+		local node = minetest.get_node(vector.add(pointed_thing.above, { x=0, y=1, z=0 }))
+		local node_def = minetest.registered_nodes[node.name]
+
+		if not node_def or not node_def.buildable_to then
+			minetest.chat_send_player(
+				placer:get_player_name(),
+				"Not enough vertical space to place the kettle grill"
+			)
+			return
+		end
+		return minetest.item_place(itemstack, placer, pointed_thing)
+	end,
+
 	after_destruct = function(pos, oldnode)
         if minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z}).name == "bbq:kettle_grill_base" then
 		minetest.set_node({x = pos.x, y = pos.y - 1, z = pos.z},{name = "air"}) end
@@ -425,6 +439,20 @@ minetest.register_node("bbq:kettle_grill_active", {
 		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z},{name = "bbq:kettle_grill", param2=minetest.dir_to_facedir(placer:get_look_dir())});
     end,
 
+	on_place = function(itemstack, placer, pointed_thing)
+		local node = minetest.get_node(vector.add(pointed_thing.above, { x=0, y=1, z=0 }))
+		local node_def = minetest.registered_nodes[node.name]
+
+		if not node_def or not node_def.buildable_to then
+			minetest.chat_send_player(
+				placer:get_player_name(),
+				"Not enough vertical space to place the kettle grill"
+			)
+			return
+		end
+		return minetest.item_place(itemstack, placer, pointed_thing)
+	end,
+
 	after_destruct = function(pos, oldnode)
         if minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z}).name == "bbq:kettle_grill_base" then
 		minetest.set_node({x = pos.x, y = pos.y - 1, z = pos.z},{name = "air"}) end
@@ -491,5 +519,19 @@ minetest.register_node("bbq:kettle_grill_base", {
 		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z},{name = "bbq:kettle_grill", param2=minetest.dir_to_facedir(placer:get_look_dir())});
 
     end,
+
+	on_place = function(itemstack, placer, pointed_thing)
+		local node = minetest.get_node(vector.add(pointed_thing.above, { x=0, y=1, z=0 }))
+		local node_def = minetest.registered_nodes[node.name]
+
+		if not node_def or not node_def.buildable_to then
+			minetest.chat_send_player(
+				placer:get_player_name(),
+				"Not enough vertical space to place the kettle grill"
+			)
+			return
+		end
+		return minetest.item_place(itemstack, placer, pointed_thing)
+	end,
 
 })
