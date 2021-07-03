@@ -1,4 +1,10 @@
 
+if minetest.global_exists("mesecon") and mesecon.register_mvps_stopper then
+    mesecon.register_mvps_stopper("bbq:kettle_grill")
+    mesecon.register_mvps_stopper("bbq:kettle_grill_active")
+    mesecon.register_mvps_stopper("bbq:kettle_grill_base")
+end
+
 --
 -- Formspecs
 --
